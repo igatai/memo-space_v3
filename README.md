@@ -39,6 +39,7 @@
 ## Association
   -- has_many :memos_tags
   -- has_many :memos, through: memos_tags
+  -- belongs_to :user
 
 ### ##################
 

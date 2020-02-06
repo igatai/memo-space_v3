@@ -1,0 +1,52 @@
+&__left {
+  width: 800px;
+  height: calc(100vh - 80px);
+  background-color: orangered;
+
+  &__ul {
+    width: 800px;
+    height: calc(100vh - 80px);
+    padding: 50px 30px;
+    background-color: gray;
+    overflow: scroll;
+
+    li:nth-child(3n+1){
+      clear:both;
+    }
+
+    &__list {
+      border-radius: 10px 10px 10px 10px;
+      height: 200px;
+      width: 200px;
+      background-color: white;
+      padding: 20px 20px;
+      float: left;
+      margin: 0 20px 20px 10px;
+      // display: flex;
+      position: relative;
+
+      &__title {
+        font-size: 32px;
+        color: brack;
+      }
+      &__date {
+        font-size: 15px;
+        color: silver;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 30px;
+        margin-bottom: 20px;
+      }
+
+    }
+  }
+  // &__ul li:nth-child(2n+1){
+  //   clear:both;
+  // }
+
+  // &__ul li:nth-of-type(odd){
+  //   margin-left: 5px;
+  // }
+
+}

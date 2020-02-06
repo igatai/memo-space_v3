@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  @import "top_bar";
+  @import "contents";
+}

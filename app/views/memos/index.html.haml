@@ -1,6 +1,13 @@
-
-
-
-%h1 Memos#index
-%p Find me in app/views/memos/index.html.erb
-
+.wrapper
+  .wrapper__top_bar
+    = render "shared/top_bar"
+  .wrapper__contents
+    .wrapper__contents__left
+      = render "shared/contents_left"
+    .wrapper__contents__center
+      .wrapper__contents__center__memo
+        = render "shared/contents_center"
+      .wrapper__contents__center__form
+        = render "shared/form"
+    .wrapper__contents__right
+      = render "shared/contents_right"

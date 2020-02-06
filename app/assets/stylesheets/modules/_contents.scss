@@ -1,0 +1,8 @@
+&__contents {
+  display: flex;
+  @import "contents_left";
+  @import "contents_center";
+  @import "contents_right";
+  width: 100%;
+  height: calc(100vh - 80px);
+}

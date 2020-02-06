@@ -1,0 +1,6 @@
+&__center {
+  height: calc(100vh - 80px);
+  width: 700px;
+  @import "contents_center_memo";
+  @import "contents_center_form";
+}

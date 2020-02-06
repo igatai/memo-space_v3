@@ -2,7 +2,8 @@
   width: 800px;
   height: calc(100vh - 80px);
   background-color: orangered;
-
+  box-sizing: border-box;
+  
   &__ul {
     width: 800px;
     height: calc(100vh - 80px);

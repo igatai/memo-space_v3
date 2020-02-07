@@ -33,8 +33,8 @@
   |user|references|null: false, foreign_key: true|
   |tag|references|null: false, foreign_key: true|
 ## Association
-  -- has_many :memos_tags
-  -- has_meny :tags, through: memos_tags
+  -- has_many :tag_memos
+  -- has_meny :tags, through: tag_memos
   -- belongs_to :user
 
 ### ##################
@@ -47,12 +47,12 @@
   |name|string|null: false, index: true|
   |user|references|null: false, foreign_key: true|
 ## Association
-  -- has_many :memos_tags
-  -- has_many :memos, through: memos_tags
+  -- has_many :tag_memos
+  -- has_many :memos, through: tag_memos
   -- belongs_to :user
 
 ### ##################
-##   memos_tags table
+##   tag_memos table
 ### ##################
 
 ## Table Definition

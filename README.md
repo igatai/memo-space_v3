@@ -1,13 +1,16 @@
-# README
 ### ##############################
 ## 
-##    MemoSpace  Database Design
+##      README
+## 
+##      - MemoSpace  Database Design -
 ## 
 ### ##############################
 
 ### ##################
+##   users table
+### ##################
 
-## users table
+## Table Definition
   |Column|Type|Options|
   |------|----|-------|
   |email|string|null: false|
@@ -18,32 +21,41 @@
   -- has_many :tags
 
 ### ##################
+##   memos table
+### ##################
 
-## memos table
+## Table Definition
   |Column|Type|Options|
   |------|----|-------|
   |title|string|null: false|
   |content|string||
   |image|string||
+  |user|references|null: false, foreign_key: true|
+  |tag|references|null: false, foreign_key: true|
 ## Association
-  -- has_many :memos_tags
-  -- has_meny :tags, through: memos_tags
+  -- has_many :tag_memos
+  -- has_meny :tags, through: tag_memos
   -- belongs_to :user
 
 ### ##################
+##   tags table
+### ##################
 
-## tags table
+## Table Definition
   |Column|Type|Options|
   |------|----|-------|
   |name|string|null: false, index: true|
+  |user|references|null: false, foreign_key: true|
 ## Association
-  -- has_many :memos_tags
-  -- has_many :memos, through: memos_tags
+  -- has_many :tag_memos
+  -- has_many :memos, through: tag_memos
   -- belongs_to :user
 
 ### ##################
+##   tag_memos table
+### ##################
 
-## memos_tags table
+## Table Definition
   |Column|Type|Options|
   |------|----|-------|
   |memo|references|null: false, foreign_key: true|
@@ -51,5 +63,3 @@
 ## Association
   -- belongs_to :memo
   -- belongs_to :tag
-
-### ##################

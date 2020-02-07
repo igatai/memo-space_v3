@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'memos/index'
+  devise_for :users
+  # get 'memos/index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "memos#index"
+  resources :users, only: [:edit, :update]
+  resources :tags,  only:[:new, :create]
 end

@@ -1,6 +1,16 @@
 .wrapper__top_bar
   .wrapper__top_bar__title
+    -# %i.fas.fa-edit
+    -# %i.fas.fa-dove
+    -# %i.fas.fa-fish
+    -# %i.far.fa-lemon
+    %i.fas.fa-republican
+    -# %i.fas.fa-folder-open
+    -# = link_to '#' do
+    -#   = icon('fas',' fa-edit',class: "wrapper__top_bar__title--icon")
     = link_to "MemoSpace", '/', class: "top_bar__title--text"
   .wrapper__top_bar__btn
-    = link_to "ログアウト", '#', class: "top_bar__btn__logout"
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "top_bar__btn__logout"
     = link_to "current_user", '#', class: "header__btn__user_name"
+    = link_to '#' do
+      = icon('fas',' fa-cog',class: "wrapper__top_bar__btn__icon_cog")

@@ -1,11 +1,18 @@
 &__memo{
   // background-color: gray;
-  height: calc(100vh - 380px);
-  width: 700px;
-  box-sizing: border-box;
+  height: 450px;
+  width: 800px;
+  // box-sizing: border-box;
+  // background-color: limegreen;
+  // margin: 0 auto;
+  // align-items: center;
+  // box-sizing: border-box;
+  margin: 0 auto;
+  // text-align: center;
   // padding: 10px 10px 10px 10px;
   &__info{
     // margin: 30px 30px 30px 30px;
+    // background-color: magenta;
     display: flex;
     &__title{
       font-size: 32px;
@@ -19,14 +26,15 @@
   }
   &__content{
     margin: 30px 30px 30px 30px;
+    // background-color: mediumspringgreen;
     display: flex;
     &__image{
       height: 300px;
       width: 300px;
       border-radius: 10px;
       // background-image:  image-url('a');
-      background-size:  cover;
-      opacity:  1;
+      // background-size:  cover;
+      // opacity:  1;
     }
     &__text{
   

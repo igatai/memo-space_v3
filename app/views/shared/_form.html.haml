@@ -1,21 +1,38 @@
-%form.new_message
-  .input_box
-    %input{ class: "input_box__title", placeholder: "  type a title"}
-    %textarea{ class: "input_box__text", placeholder: "  type a message"}
-    %label{class: "input_box__image"}
-      = icon('fas', 'image')
-      %input{type: "file", class: "input_box__image__file" }
-  %input{type: "submit", class: "submit_btn"}
+-# %form.new_message
+-#   .input_box
+-#     %input{ class: "input_box__title", placeholder: "  type a title"}
+-#     %textarea{ class: "input_box__text", placeholder: "  type a message"}
+-#     %label{class: "input_box__image"}
+-#       = icon('fas', 'image')
+-#       %input{type: "file", class: "input_box__image__file" }
+-#   %input{type: "submit", class: "submit_btn"}
+
+
+
+
+
+.new_message
+  =form_for [@memo] do |f|
+    = f.text_field :title, class: 'new_message__title',placeholder: 'type a title'
+    = f.text_area :text, class: 'new_message__text',placeholder: 'type a message'
+    .new_message__mask
+      =f.label :image, class: 'new_message__mask__image' do
+        = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'new_message__submit_btn'
+
+
+
 
 
 -# .wrapper__contents__center__form
-  -# =form_for [@memo] do |f|
-  -#   = f.text_field :content, class: 'wrapper__contents__center__form__input_box',placeholder: 'type a message'
-    -# .wrapper__contents__center__form__mask
-    -#   =f.label :image, class: 'wrapper__contents__center__form__mask__image' do
-    -#     = icon('fas', 'image', class: 'icon')
-    -#     = f.file_field :image, class: 'hidden'
-    -# = f.submit 'Send', class: 'wrapper__contents__center__form__submit'
+-#   =form_for [@memo] do |f|
+-#     = f.text_field :content, class: 'wrapper__contents__center__form__input_box',placeholder: 'type a message'
+-#     .wrapper__contents__center__form__mask
+-#       =f.label :image, class: 'wrapper__contents__center__form__mask__image' do
+-#         = icon('fas', 'image', class: 'icon')
+-#         = f.file_field :image, class: 'hidden'
+-#     = f.submit 'Send', class: 'wrapper__contents__center__form__submit'
 
 
 

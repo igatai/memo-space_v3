@@ -10,7 +10,13 @@
     -#   = icon('fas',' fa-edit',class: "wrapper__top_bar__title--icon")
     = link_to "MemoSpace", '/', class: "top_bar__title--text"
   .wrapper__top_bar__btn
-    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "top_bar__btn__logout"
-    = link_to "current_user", '#', class: "header__btn__user_name"
+    =link_to destroy_user_session_path do
+      = icon('fas',' fa-sign-out-alt',class: "wrapper__top_bar__btn__logout")
+    -# =link_to destroy_user_session_path do
+    -#   = icon('far',' fa-lemon',class: "side_bar__user__top_items__icon__edit")
+    -# =link_to destroy_user_session_path do
+    -#   = icon('fas',' fa-edit',class: "side_bar__user__top_items__icon__edit")
+    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "wrapper__top_bar__btn__logout"
+    = link_to "current_user", '#', class: "wrapper__top_bar__btn__user_name"
     = link_to '#' do
       = icon('fas',' fa-cog',class: "wrapper__top_bar__btn__icon_cog")

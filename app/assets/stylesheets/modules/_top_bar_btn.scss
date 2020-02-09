@@ -1,5 +1,26 @@
 &__btn {
-  background-color: gray;
-  width: 300px;
+  // background-color: gray;
+  width: 100px;
   height: 80px;
+  font-size: 36px;
+  color: white;
+  text-decoration: none;
+  line-height: 80px;
+  padding-top: 20px;
+  // background-color: orange;
+  &__logout {
+
+  }
+
+  i.fas.fa-.fa-sign-out-alt {
+    font-size: 36px;
+    color: white;
+    text-decoration: none;
+  }
+  // i.fas.fa-.cog {
+  //   font-size: 36px;
+  //   color: white;
+  //   text-decoration: none;
+  // }
 }
+

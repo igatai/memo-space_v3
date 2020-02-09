@@ -1,7 +1,7 @@
 class MemosController < ApplicationController
   before_action :set_user, only: [:index, :show]
   before_action :set_memo_list, only: [:index]
-  before_action :set_memo_content, only: [:show]
+  before_action :set_memo_content, only: [:show,:edit]
 
   def index
     @memo = Memo.new
@@ -23,6 +23,19 @@ class MemosController < ApplicationController
 
   def show
 
+  end
+
+  def edit
+
+  end
+
+  def update
+    @memo = Memo.find(params[:id])
+    if @memo.update(memo_params)
+      redirect_to memo_path(memo_params)
+    else
+      render :edit
+    end
   end
 
   private

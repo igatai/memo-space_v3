@@ -6,6 +6,7 @@
       = render "shared/contents_left"
     .wrapper__contents__center
       .wrapper__contents__center__form
-        = render "shared/form"
+        %h1 メモ編集
+        = render partial: 'shared/form', locals: { memo: @memo }
     .wrapper__contents__right
       = render "shared/contents_right"

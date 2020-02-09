@@ -1,7 +1,8 @@
 &__memo{
   // background-color: gray;
-  height: 450px;
-  width: 800px;
+  height: 700px;
+  width: 900px;
+  padding: 30px 30px 30px 30px;
   // box-sizing: border-box;
   // background-color: limegreen;
   // margin: 0 auto;
@@ -10,18 +11,32 @@
   margin: 0 auto;
   // text-align: center;
   // padding: 10px 10px 10px 10px;
+  background-color: rgba(128,128,128,0.5);
+  border-radius: 10px;
+  // overflow: scroll;
+  position: relative;
   &__info{
     // margin: 30px 30px 30px 30px;
     // background-color: magenta;
     display: flex;
+    justify-content: space-between;
+    height: 50px;
+
     &__title{
-      font-size: 32px;
-      margin: 30px 30px 30px 30px;
+      font-size: 40px;
+      color: white;
+      font-weight: bold;
+      // background-color: green;
     }
     &__date{
-      margin: 30px 30px 30px 30px;
-      font-size: 12px;
+      font-size: 18px;
       color: silver;
+      // background-color: green;
+      padding-top: 30px;
+      // line-height: 50px;
+      // vertical-align: text-bottom;
+      position: relative;
+      top: 0;
     }
   }
   &__content{
@@ -37,8 +52,17 @@
       // opacity:  1;
     }
     &__text{
-  
+      color: white;  
+      font-size: 30px;
     }
   }
-
+  .fas.fa-.fa-edit {
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 20px 20px 0;
+  }
 }

@@ -1,7 +1,8 @@
 &__center {
   height: calc(100vh - 80px);
   width: calc(100vw - 450px - 180px);
-  @import "contents_center_memo";
+  margin-top: 100px;
+  // @import "contents_center_memo";
   @import "contents_center_form";
   // background-color: olive;
 }

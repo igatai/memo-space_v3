@@ -1,0 +1,12 @@
+.wrapper
+  .wrapper__top_bar
+    = render "shared/top_bar"
+  .wrapper__contents
+    .wrapper__contents__index
+      = render "shared/contents_left"
+    .wrapper__contents__center
+      .wrapper__contents__center__form
+        %h1 メモ登録
+        = render partial: 'shared/form', locals: { memo: @memo }
+    .wrapper__contents__right
+      = render "shared/contents_right"

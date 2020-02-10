@@ -1,0 +1,17 @@
+.wrapper__contents__index__head
+  .wrapper__contents__index__head__sub_title
+    = "#{@user.name}さんのMemoList"
+  -# = link_to new_memo_path do
+  -#   = icon('fas',' fa-plus-circle')
+%ul.wrapper__contents__index__ul
+  - @memos.each do |memo|
+    = link_to memo_path(memo) do
+      %li.wrapper__contents__index__ul__list
+        .wrapper__contents__index__ul__list__title
+          = memo.title
+        .wrapper__contents__index__ul__list__content
+          = image_tag memo.image.url, class: 'image', size: '90x90' if memo.image.present?
+          .wrapper__contents__index__ul__list__content__text
+            = memo.text
+        .wrapper__contents__index__ul__list__date
+          = memo.updated_at.strftime("%Y年%m月%d日")

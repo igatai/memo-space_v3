@@ -1,0 +1,12 @@
+.wrapper
+  .wrapper__top_bar
+    = render "shared/top_bar"
+  .wrapper__contents
+    .wrapper__contents__index
+      = render "shared/contents_left"
+    .wrapper__contents__center
+      .wrapper__contents__center__form
+        %h1 タグ登録
+        = render partial: 'shared/form_tag', locals: { tag: @tag }
+    .wrapper__contents__right
+      = render "shared/contents_right"

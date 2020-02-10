@@ -1,26 +1,46 @@
 &__btn {
   // background-color: gray;
-  width: 100px;
+  width: 200px;
   height: 80px;
   font-size: 36px;
   color: white;
-  text-decoration: none;
   line-height: 80px;
   padding-top: 20px;
-  // background-color: orange;
-  &__logout {
+  position: relative;
 
+  a {
+    text-decoration: none;
+  }
+  p#new_file.fas.fa-plus-circle {
+    font-size: 15px;
+    color: white;
+    position: absolute;
+    left: -13px;
+    bottom: 3px;
+  }
+  i#new_file.far.fa-file-alt {
+    font-size: 28px;
+    color: white;
+    margin-right: 20px;
+  }
+
+  p#new_tag.fas.fa-plus-circle {
+    font-size: 15px;
+    color: white;
+    position: absolute;
+    left: 42px;
+    bottom: 3px;
+  }
+  i#new_tag.fas.fa-tags {
+    font-size: 28px;
+    color: white;
+    margin-left: 2px;
   }
 
   i.fas.fa-.fa-sign-out-alt {
-    font-size: 36px;
+    font-size: 28px;
     color: white;
-    text-decoration: none;
+    margin-left: 10px;
   }
-  // i.fas.fa-.cog {
-  //   font-size: 36px;
-  //   color: white;
-  //   text-decoration: none;
-  // }
 }
 

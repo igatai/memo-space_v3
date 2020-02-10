@@ -4,7 +4,7 @@ class MemosController < ApplicationController
   before_action :set_memo_content, only: [:show,:edit]
 
   def index
-    @memo = Memo.new
+
   end
 
   def new
@@ -45,7 +45,7 @@ class MemosController < ApplicationController
   end
 
   def set_memo_list
-    @memos = Memo.find(current_user.id)
+    @memos = @user.memos
   end
 
   def set_memo_content

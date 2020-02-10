@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   root "memos#index"
   resources :users, only: [:edit, :update]
-  resources :memos, only: [:new, :create, :edit, :update, :show, :delete]
-  resources :tags,  only:[:index, :new, :create, :edit, :update, :delete]
+  resources :memos, only: [:show, :new, :create, :edit, :update, :delete]
+  resources :tags,  only:[:index, :show, :new, :create, :edit, :update, :delete]
 end

@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
-  before_action :set_user, only: [:index, :new]
-  before_action :set_tags, only: [:index, :new, :show]
+  # before_action :set_user, only: [:index, :new, :create, :show]
+  # before_action :set_users_tag_list, only: [:index, :new, :create, :show]
 
   def index
     # binding.pry
@@ -11,6 +11,7 @@ class TagsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @tag = Tag.new(tag_params)
     if @tag.save
       redirect_to root_path, notice: 'タグを作成しました'
@@ -24,15 +25,15 @@ class TagsController < ApplicationController
   end
 
   private
-  def set_user
-    @user = User.find(current_user.id)
-  end
-  def set_tags
-    @tags = @user.tags
-  end
-  def set_memos
-    @memos = Memo.find(params[:id])
-  end
+  # def set_user
+  #   @user = User.find(current_user.id)
+  # end
+  # def set_users_tags_list
+  #   @tags = @user.tags unless @user.tags != nil 
+  # end
+  # def set_memos
+  #   @memos = Memo.find(params[:id])
+  # end
   def tag_params
     params.require(:tag).permit(:name).merge(user_id: current_user.id)
     # params.require(:tag).permit(:name, :memo_ids []).merge(user_id: current_user.id)

@@ -1,18 +1,15 @@
 &__index {
   width: 90%;
   height: calc(100vh - 80px);
-  // background-color: orangered;
   box-sizing: border-box;
   margin: auto;
+  padding-left: 100px;
   // overflow: scroll;
 
   &__head {
-    // display: flex;
     color: white;
-    // text-align: center;
-    // align-items: center;
-    height: 200px;
-    width: calc(100vw - 200px);
+    height: 100%px;
+    width: calc(100vw - 300px);
 
     &__sub_title {
       font-size: 30px;

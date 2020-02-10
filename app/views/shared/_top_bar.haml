@@ -1,20 +1,8 @@
 .wrapper__top_bar
   .wrapper__top_bar__title
-    -# %i.fas.fa-edit
-    -# %i.fas.fa-dove
-    -# %i.fas.fa-fish
-    -# %i.far.fa-lemon
-    -# %i.fas.fa-republican
-    -# %i.fas.fa-folder-open
-    -# = link_to '#' do
-    -#   = icon('fas',' fa-edit',class: "wrapper__top_bar__title--icon")
-    -# = icon('fas',' fa-republican','MemoSpace',class: "wrapper__top_bar__title--icon")
-    -# = link_to "MemoSpace", '/', class: 'fas fa-edit'
-    -# = link_to(content_tag(:i, 'MemoSpace', class: "fas fa-republican"),root_path,:method => :get)
     = link_to root_path, :method => :get do
       %i.fas.fa-republican
         MemoSpace
-
   .wrapper__top_bar__btn
     = link_to new_memo_path do
       %p#new_file.fas.fa-plus-circle
@@ -22,15 +10,7 @@
     = link_to new_tag_path do
       %p#new_tag.fas.fa-plus-circle
       %i#new_tag.fas.fa-tags
-
+    %i.far.fa-user
+      #{@user.name}
     =link_to destroy_user_session_path, :method => :delete do
       %i.fas.fa-.fa-sign-out-alt
-    -# =link_to destroy_user_session_path do
-    -#   = icon('far',' fa-lemon',class: "side_bar__user__top_items__icon__edit")
-    -# =link_to destroy_user_session_path do
-    -#   = icon('fas',' fa-edit',class: "side_bar__user__top_items__icon__edit")
-    -# = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "wrapper__top_bar__btn__logout"
-    -# = link_to "current_user", '#', class: "wrapper__top_bar__btn__user_name"
-    -# = link_to '#' do
-    -# = icon('fas','fa-cog')
-    -# = icon('fas',' fa-cog',class: "wrapper__top_bar__btn__icon_cog")

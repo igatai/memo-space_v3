@@ -1,6 +1,6 @@
 &__btn {
   // background-color: gray;
-  width: 200px;
+  width: 350px;
   height: 80px;
   font-size: 36px;
   color: white;
@@ -11,6 +11,7 @@
   a {
     text-decoration: none;
   }
+
   p#new_file.fas.fa-plus-circle {
     font-size: 15px;
     color: white;
@@ -35,6 +36,12 @@
     font-size: 28px;
     color: white;
     margin-left: 2px;
+  }
+
+  i.far.fa-user {
+    padding-left: 20px;
+    font-size: 30px;
+    color: white;
   }
 
   i.fas.fa-.fa-sign-out-alt {

@@ -1,7 +1,8 @@
 &__memo{
   // background-color: gray;
   height: 700px;
-  width: 900px;
+  // width: 900px;
+  width: calc(100vw - $right_width - $left_width);
   padding: 30px 30px 30px 30px;
   // box-sizing: border-box;
   // background-color: limegreen;
@@ -30,7 +31,7 @@
     }
     &__date{
       font-size: 18px;
-      color: silver;
+      color: white;
       // background-color: green;
       padding-top: 30px;
       // line-height: 50px;

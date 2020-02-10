@@ -12,17 +12,17 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
-  
+
   def set_user
-    @user = User.find(current_user.id)
+    @user = User.find(current_user.id) if current_user != nil
   end
 
   def set_memo_list
-    @memos = @user.memos
+    @memos = @user.memos if @user != nil
   end
 
   def set_users_tag_list
-    @user_tags = @user.tags
+    @user_tags = @user.tags if @user != nil
   end
 
 end

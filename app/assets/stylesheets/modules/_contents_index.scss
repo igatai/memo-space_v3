@@ -1,5 +1,6 @@
 &__index {
-  width: 90%;
+  // width: 90%;
+  width: calc(100vw - #{$right_width});
   height: calc(100vh - 80px);
   box-sizing: border-box;
   margin: auto;
@@ -63,7 +64,7 @@
       height: 200px;
       width: 200px;
       background-color: white;
-      padding: 20px 30px;
+      padding: 30px;
       float: left;
       margin: 0 70px 70px 0px;
       // display: inline-block;
@@ -75,17 +76,19 @@
         color: brack;
       }
       &__content {
+        margin-top: 30px;
         display: flex;
         &__image {
+
         }
         &__text {
           margin-left: 20px;
-          font-size: 12px;
+          font-size: 8px;
           color: silver;
         }
       }
       &__date {
-        font-size: 15px;
+        font-size: 10px;
         color: silver;
         position: absolute;
         bottom: 0;

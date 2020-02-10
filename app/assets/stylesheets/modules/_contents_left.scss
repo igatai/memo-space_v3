@@ -1,5 +1,8 @@
+$left_width: 450px;
+
 &__left {
-  width: 450px;
+  // width: 450px;
+  width: #{$left_width};
   height: calc(100vh - 80px);
   // background-color: orangered;
   box-sizing: border-box;

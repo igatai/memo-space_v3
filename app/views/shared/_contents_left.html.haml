@@ -1,6 +1,5 @@
 .wrapper__contents__left
   %ul.wrapper__contents__left__ul
-    -# - current_user.memos.each do |memo|
     - @memos.each do |memo|
       = link_to memo_path(memo) do
         %li.wrapper__contents__left__ul__list

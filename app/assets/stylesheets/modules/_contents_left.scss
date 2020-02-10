@@ -36,7 +36,6 @@ $left_width: 450px;
       padding: 20px 30px;
       float: left;
       margin: 0 30px 60px 0px;
-      // display: flex;
       position: relative;
 
       &__title {
@@ -66,12 +65,4 @@ $left_width: 450px;
 
     }
   }
-  // &__ul li:nth-child(2n+1){
-  //   clear:both;
-  // }
-
-  // &__ul li:nth-of-type(odd){
-  //   margin-left: 5px;
-  // }
-
 }

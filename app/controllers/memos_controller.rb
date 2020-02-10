@@ -1,8 +1,5 @@
 class MemosController < ApplicationController
-  # before_action :set_user, only: [:index, :new, :show, :edit, :create]
-  # before_action :set_memo_list, only: [:index, :show, :new, :edit, :create]
   before_action :set_memo_content, only: [:show, :edit]
-  # before_action :set_users_tag_list, only: [:index, :show, :edit, :create]
 
   def index
 
@@ -41,20 +38,9 @@ class MemosController < ApplicationController
 
   private
 
-  # def set_user
-  #   @user = User.find(current_user.id)
-  # end
-
-  # def set_memo_list
-  #   @memos = @user.memos
-  # end
-
   def set_memo_content
     @memo = Memo.find(params[:id])
   end
-  # def set_users_tag_list
-  #   @user_tags = @user.tags
-  # end
   def memo_params
     # tag_ids: [] ... model_name + __ids + 配列表記[] -> 中間テーブルに保存
     params.require(:memo).permit(:title, :text, :image, tag_ids: []).merge(user_id: current_user.id)

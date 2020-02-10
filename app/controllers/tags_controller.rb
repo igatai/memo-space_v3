@@ -2,7 +2,7 @@ class TagsController < ApplicationController
   before_action :set_tag_memos, only: [:show]
 
   def index
-    # binding.pry
+
   end
 
   def new
@@ -10,7 +10,6 @@ class TagsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @tag = Tag.new(tag_params)
     if @tag.save
       redirect_to root_path, notice: 'タグを作成しました'
@@ -30,7 +29,6 @@ class TagsController < ApplicationController
   end
   def tag_params
     params.require(:tag).permit(:name).merge(user_id: current_user.id)
-    # params.require(:tag).permit(:name, :memo_ids []).merge(user_id: current_user.id)
   end
 
 end

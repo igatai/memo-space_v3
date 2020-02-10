@@ -1,7 +1,6 @@
 &__form {
   height: 400px;
   width: 800px;
-  // background-color: blue;
   padding: 20px 20px 20px 20px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -9,7 +8,6 @@
   font-size: 40px;
 
   .new_message {
-    // background-color: lightgreen;
     &__title {
       width: 750px;
       height: 50px;
@@ -46,6 +44,9 @@
         }
       }
     }
+    // input#memo_tag_ids_* {
+    //   font-size: 20px;
+    // }
     &__submit_btn {
       width: 750px;
       height: 40px;

@@ -1,6 +1,5 @@
 class TagsController < ApplicationController
-  # before_action :set_user, only: [:index, :new, :create, :show]
-  # before_action :set_users_tag_list, only: [:index, :new, :create, :show]
+  before_action :set_tag_memos, only: [:show]
 
   def index
     # binding.pry
@@ -21,19 +20,14 @@ class TagsController < ApplicationController
   end
 
   def show
-    @memos = Memo.find(params[:id])
+
   end
 
   private
-  # def set_user
-  #   @user = User.find(current_user.id)
-  # end
-  # def set_users_tags_list
-  #   @tags = @user.tags unless @user.tags != nil 
-  # end
-  # def set_memos
-  #   @memos = Memo.find(params[:id])
-  # end
+
+  def set_tag_memos
+    @memos = Tag.find(params[:id]).memos
+  end
   def tag_params
     params.require(:tag).permit(:name).merge(user_id: current_user.id)
     # params.require(:tag).permit(:name, :memo_ids []).merge(user_id: current_user.id)

@@ -1,6 +1,7 @@
 &__center {
   height: calc(100vh - 80px);
-  width: 700px;
+  width: calc(100vw - 450px - 180px);
+  margin-top: 60px;
   @import "contents_center_memo";
   @import "contents_center_form";
 }

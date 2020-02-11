@@ -1,48 +1,61 @@
 &__form {
-  height: 300px;
-  width: 700px;
-  background-color: blue;
+  height: 400px;
+  width: 800px;
   padding: 20px 20px 20px 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  color: white;
+  font-size: 40px;
 
-  form.new_message {
-    .input_box {
-      // width: 300px;
-      // height: 450px;
-      // background-color: skyblue;
-      // display: flex;
+  .new_message {
+    &__title {
+      width: 750px;
+      height: 50px;
+      align-items: center;
+      border-radius: 10px;
+      font-size: 20px;
+      margin-bottom: 40px;
+      padding-left: 20px;
+    }
+    &__text {
+      width: 750px;
+      height: 400px;
+      align-items: center;
+      padding-right: 90px;
+      border-radius: 10px;
+      font-size: 20px;
+      margin-bottom: 40px;
+      padding-top:20px;
+      padding-left: 20px;
+    }
+    &__mask {
       position: relative;
-      &__title {
-        width: 650px;
-        height: 50px;
-        align-items: center;
-        border-radius: 10px;
-        font-size: 30px;
-        margin-bottom: 10px;
-      }
-      &__text {
-        width: 650px;
-        height: 140px;
-        align-items: center;
-        padding-right: 90px;
-        border-radius: 10px;
-        font-size: 30px;
-        margin-bottom: 10px;
-      }
+
       &__image {
         position: absolute;
-        bottom: 35px;
+        bottom: 45px;
         right: 20px;
-        font-size: 5rem;
-        &__file {
+        font-size: 2rem;
+        #memo_image {
           display: none;
+        }
+        &__file {
+
         }
       }
     }
-  }
-  .submit_btn {
-    width: 650px;
-    height: 60px;
-    border-radius: 5px;
-    font-size: 1.8em;
+    &__check_box {
+      font-size: 20px;
+      padding-left: 5px;
+    }
+
+    &__submit_btn {
+      width: 750px;
+      height: 40px;
+      border-radius: 5px;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
   }
 }

@@ -1,58 +1,13 @@
--# < contents_left >memo_title
 .wrapper__contents__left
   %ul.wrapper__contents__left__ul
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title
-      .wrapper__contents__left__ul__list__date
-        2020/2/19
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title2
-      .wrapper__contents__left__ul__list__date
-        2020/2/20
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title3
-      .wrapper__contents__left__ul__list__date
-        2020/2/21
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title4
-      .wrapper__contents__left__ul__list__date
-        2020/2/21
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title5
-      .wrapper__contents__left__ul__list__date
-        2020/2/21
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title6
-      .wrapper__contents__left__ul__list__date
-        2020/2/21
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title7
-      .wrapper__contents__left__ul__list__date
-        2020/2/21
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title8
-      .wrapper__contents__left__ul__list__date
-        2020/2/21
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title9
-      .wrapper__contents__left__ul__list__date
-        2020/2/21
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title10
-      .wrapper__contents__left__ul__list__date
-        2020/2/21
-    %li.wrapper__contents__left__ul__list
-      .wrapper__contents__left__ul__list__title
-        title11
-      .wrapper__contents__left__ul__list__date
-        2020/2/21
+    - @memos.each do |memo|
+      = link_to memo_path(memo) do
+        %li.wrapper__contents__left__ul__list
+          .wrapper__contents__left__ul__list__title
+            = memo.title
+          .wrapper__contents__left__ul__list__content
+            = image_tag memo.image.url, class: 'image', size: '90x90' if memo.image.present?
+            .wrapper__contents__left__ul__list__content__text
+              = memo.text
+          .wrapper__contents__left__ul__list__date
+            = memo.updated_at.strftime("%Y年%m月%d日 %H時%M分")

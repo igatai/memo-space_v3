@@ -1,10 +1,11 @@
-.wrapper__contents__center
-  .wrapper__contents__center__memo
-    .wrapper__contents__center__memo__info
-      .wrapper__contents__center__memo__info__title
-        title1
-      .wrapper__contents__center__memo__info__date
-        2020/2/19
-    .wrapper__contents__center__memo__content
-      <img src="/assets/a.jpg" class="wrapper__contents__center__memo__content__image" />
-      .wrapper__contents__center__memo__content__text
+.wrapper__contents__center__memo__info
+  .wrapper__contents__center__memo__info__title
+    = @memo.title
+  .wrapper__contents__center__memo__info__date
+    = @memo.updated_at.strftime("%Y年%m月%d日 %H時%M分")
+.wrapper__contents__center__memo__content
+  .wrapper__contents__center__memo__content__text
+    - if @memo.text.present?
+      %p
+        = @memo.text
+  = image_tag @memo.image.url, class: 'image', size: '300x300' if @memo.image.present?

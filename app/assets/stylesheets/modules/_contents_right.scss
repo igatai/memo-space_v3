@@ -1,6 +1,41 @@
+$right_width: 300px;
+
 &__right {
-  width: 200px;
+  width: #{$right_width};
   height: calc(100vh - 80px);
-  background-color: orange;
   box-sizing: border-box;
+  padding-top: 70px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+
+
+  &__ul {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    list-style-type: none;
+    border-radius: 10px;
+    background-color: rgba(73, 72, 72, 0.5);
+    margin: 0 8px 0 0;
+    &__list {
+      width: 250px;
+      height: 60px;
+      border-radius: 10px;
+      margin: 20px 20px 20px 20px;
+      background-color: white;
+      text-align: center;
+      line-height: 60px;
+      display: flex;
+      &__icon {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      &__name {
+
+      }
+    }
+    a {
+      text-decoration: none;        
+    }
+  }
 }

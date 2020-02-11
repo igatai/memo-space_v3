@@ -1,7 +1,10 @@
 &__top_bar {
   width: 100vw;
   height: 80px;
-  background-color: pink;
+  background-color: black;
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
+  @import "top_bar_title";
+  @import "top_bar_btn";
 }

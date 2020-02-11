@@ -34,7 +34,7 @@
   |tag|references|null: false, foreign_key: true|
 ## Association
   -- has_many :tag_memos
-  -- has_meny :tags, through: tag_memos
+  -- has_many :tags, through: tag_memos
   -- belongs_to :user
 
 ### ##################

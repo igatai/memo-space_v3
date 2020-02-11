@@ -44,9 +44,11 @@
         }
       }
     }
-    // input#memo_tag_ids_* {
-    //   font-size: 20px;
-    // }
+    &__check_box {
+      font-size: 20px;
+      padding-left: 5px;
+    }
+
     &__submit_btn {
       width: 750px;
       height: 40px;

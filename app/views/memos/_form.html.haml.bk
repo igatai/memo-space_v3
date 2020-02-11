@@ -6,6 +6,6 @@
       =f.label :image, class: 'new_message__mask__image' do
         = icon('fas', 'image', class: 'icon')
         = f.file_field :image, class: 'hidden'
-    = f.collection_check_boxes :tag_id, @user_tags, :id, :name
+        = f.collection_check_boxes :tag_id, @user_tags, :id, :name, class: 'new_message__check_box'
 
     = f.submit 'Send', class: 'new_message__submit_btn'

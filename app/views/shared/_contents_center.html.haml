@@ -1,11 +1,14 @@
 .wrapper__contents__center__memo__info
   .wrapper__contents__center__memo__info__title
-    = @memo.title
+    -# = @memo.title
+    = simple_format(@memo.title)
   .wrapper__contents__center__memo__info__date
-    = @memo.updated_at.strftime("%Y年%m月%d日 %H時%M分")
+    = simple_format(@memo.updated_at.strftime("%Y年%m月%d日 %H時%M分"))
+    -# = @memo.updated_at.strftime("%Y年%m月%d日 %H時%M分")
 .wrapper__contents__center__memo__content
   .wrapper__contents__center__memo__content__text
-    - if @memo.text.present?
-      %p
-        = @memo.text
+    = simple_format(@memo.text) if @memo.text.present?
+    -# - if @memo.text.present?
+    -#   %p
+    -#     = @memo.text
   = image_tag @memo.image.url, class: 'image', size: '300x300' if @memo.image.present?

@@ -6,4 +6,11 @@ class Memo < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
+  def self.search(search)
+    return Memo.all unless search
+  end
+
+  # def self.filter(id)
+  #   return Memo.tags.find()
+
 end

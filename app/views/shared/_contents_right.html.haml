@@ -1,10 +1,23 @@
 .wrapper__contents__right
   = "タグリスト"
-  .wrapper__contents__right__ul
-    - @user_tags.each do |tag|
-      = link_to tag_path(tag.id) do
-        %li.wrapper__contents__right__ul__list
-          .wrapper__contents__right__ul__list__icon
-            %i#new_tag.fas.fa-tags
-          .wrapper__contents__right__ul__list__name
-            = "#{tag.name}"
+  %ul.wrapper__contents__right__ul
+    = form_tag(filter_tags_path, method: "get") do
+      = label_tag(:q, "Search for:")
+      = 
+    - @user_tags.each do |t|
+    %li
+      = t.check_box :tag, :tag_id, {class: }
+
+    -# = form_tag(search_memos_path, method: :GET) do |f|
+    -#   = f.check_box :tag_ids, @user_tags, :id, :name, true, true do |b|
+    -#     = b.label { b.check_box + b.text }
+    -#   = f.submit 'search'
+
+    -# .new_message__check_box
+    -#   = f.collection_check_boxes :tag_ids, @user_tags, :id, :name do |b|
+    -#     = b.label(class:"label-checkbox") { b.check_box + b.text }
+    -# = f.submit '登録', class: 'new_message__submit_btn'
+
+
+
+-# form.check_box オブジェクト名, プロパティ名 [, オプション, checked_value = "1", unchecked_value = "0"]

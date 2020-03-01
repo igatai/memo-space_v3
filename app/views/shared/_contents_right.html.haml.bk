@@ -1,0 +1,10 @@
+.wrapper__contents__right
+  = "タグリスト"
+  .wrapper__contents__right__ul
+    - @user_tags.each do |tag|
+      = link_to tag_path(tag.id) do
+        %li.wrapper__contents__right__ul__list
+          .wrapper__contents__right__ul__list__icon
+            %i#new_tag.fas.fa-tags
+          .wrapper__contents__right__ul__list__name
+            = "#{tag.name}"

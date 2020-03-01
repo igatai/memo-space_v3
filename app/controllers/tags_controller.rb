@@ -22,13 +22,24 @@ class TagsController < ApplicationController
 
   end
 
+  def filter
+    @memos = Memo.filter(selected_tags_params)
+  end
+
   private
 
   def set_tag_memos
     @memos = Tag.find(params[:id]).memos
   end
+
+  # checkbox用
+  def selected_tags_params
+    params.require(:tag).permit(tag_ids: [])
+  end
+
   def tag_params
     params.require(:tag).permit(:name).merge(user_id: current_user.id)
   end
+
 
 end

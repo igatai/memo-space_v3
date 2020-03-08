@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
   def set_users_tag_list
     # @user_tags = @user.tags if @user != nil
     @user_tags = @user&.tags
+    # binding.pry
   end
 
 end

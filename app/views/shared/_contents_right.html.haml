@@ -2,33 +2,9 @@
   = "タグリスト"
   %ul.wrapper__contents__right__ul
     = form_with(url: search_tags_path, local: true, method: :get, class: "wrapper__contents__right__ul__search-form") do |form|
-      -# form.check_box :配列名, { 複数のチェックボックスをひとまとめに扱うか, uncheck時に0の自動取得を回避 }, "チェック時に取得する値"
       - @user_tags.each do |user_tag|
         = form.check_box :tag_ids, { multiple: true, include_hidden: false }, user_tag.id
+        -# form.check_box :配列名, { 複数のチェックボックスをひとまとめに扱うか, uncheck時に0の自動取得を回避 }, "チェック時に取得する値"
         = form.label user_tag.name
         %br
       = form.submit 'Search', class: 'wrapper__contents__right__ul__search-form__submit'
-
-      -# @user_tags
-      -# params.require(:tag).permit(tag_ids: [])
-
-    -# = form_tag(filter_tags_path, method: "get") do
-    -#   = label_tag(:q, "Search for:")
-    -#   = 
-    -# - @user_tags.each do |t|
-    -# %li
-    -#   = t.check_box :tag, :tag_id, {class: }
-
-    -# = form_tag(search_memos_path, method: :GET) do |f|
-    -#   = f.check_box :tag_ids, @user_tags, :id, :name, true, true do |b|
-    -#     = b.label { b.check_box + b.text }
-    -#   = f.submit 'search'
-
-    -# .new_message__check_box
-    -#   = f.collection_check_boxes :tag_ids, @user_tags, :id, :name do |b|
-    -#     = b.label(class:"label-checkbox") { b.check_box + b.text }
-    -# = f.submit '登録', class: 'new_message__submit_btn'
-
-
-
--# form.check_box オブジェクト名, プロパティ名 [, オプション, checked_value = "1", unchecked_value = "0"]

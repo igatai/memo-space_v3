@@ -1,10 +1,16 @@
-.wrapper__contents__right
-  = "タグリスト"
-  %ul.wrapper__contents__right__ul
-    = form_with(url: search_tags_path, local: true, method: :get, class: "wrapper__contents__right__ul__search-form") do |form|
-      - @user_tags.each do |user_tag|
-        = form.check_box :tag_ids, { multiple: true, include_hidden: false }, user_tag.id
+-# .wrapper__contents__right
+
+%ul.wrapper__contents__right__ul
+  .wrapper__contents__right__ul__title
+    = "タグリスト"
+  = form_with(url: search_tags_path, local: true, method: :get, class: "wrapper__contents__right__ul__search-form") do |form|
+    - @user_tags.each do |user_tag|
+      %li.wrapper__contents__right__ul__search-form__list
+        = form.check_box :tag_ids, { multiple: true, include_hidden: false, class: "wrapper__contents__right__ul__search-form__list__checkbox" }, user_tag.id
+        -# = form.check_box :tag_ids, { multiple: true, include_hidden: false }, user_tag.id
         -# form.check_box :配列名, { 複数のチェックボックスをひとまとめに扱うか, uncheck時に0の自動取得を回避 }, "チェック時に取得する値"
-        = form.label user_tag.name
-        %br
-      = form.submit 'Search', class: 'wrapper__contents__right__ul__search-form__submit'
+        = form.label user_tag.name, class:"wrapper__contents__right__ul__search-form__list__name"
+
+    = form.submit 'Search', class: 'wrapper__contents__right__ul__search-form__submit'
+  %br
+  = "※AND条件で絞り込み検索します。"

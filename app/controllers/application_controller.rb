@@ -18,12 +18,10 @@ class ApplicationController < ActionController::Base
    end
 
   def set_memo_list
-    # @memos = @user.memos if @user != nil
     @memos = @user&.memos
   end
 
   def set_users_tag_list
-    # @user_tags = @user.tags if @user != nil
     @user_tags = @user&.tags
   end
 

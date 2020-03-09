@@ -16,4 +16,3 @@
       = f.collection_check_boxes :tag_ids, @user_tags, :id, :name do |b|
         = b.label(class:"label-checkbox") { b.check_box + b.text }
     = f.submit '登録', class: 'new_message__submit_btn'
-  

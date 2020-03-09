@@ -1,5 +1,6 @@
 &__contents {
   display: flex;
+  @import "mixin/mixin";
   @import "contents_left";
   @import "contents_center";
   @import "contents_right";

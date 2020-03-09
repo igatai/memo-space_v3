@@ -3,12 +3,17 @@
 }
 
 .wrapper {
-  background-image:  image-url("prague-980732_1920.jpg");
+  // background-image:  image-url("prague-980732_1920.jpg");
+  // background-image:  image-url("uyuni.jpg");
+  // background-image:  image-url("monumentvalley");
+  background-image:  image-url("beach.jpg");
   background-size:  cover;
-  z-index: 0;
-  overflow: hidden;
-  background-color: rgb(0,163,175);
-  position: relative;
+
+  // smork///////
+  // z-index: 0;
+  // overflow: hidden;
+  // background-color: rgb(0,163,175);
+  // position: relative;
 
   @import "top_bar";
   @import "contents";

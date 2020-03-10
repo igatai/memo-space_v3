@@ -20,4 +20,4 @@ public/uploads/*
 
 /app/assets/images/*
 
-config/secrets.yml
+# config/secrets.yml

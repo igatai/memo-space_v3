@@ -1,5 +1,3 @@
--# .wrapper__contents__right
-
 %ul.wrapper__contents__right__ul
   .wrapper__contents__right__ul__title
     = "タグリスト"
@@ -7,8 +5,7 @@
     - @user_tags.each do |user_tag|
       %li.wrapper__contents__right__ul__search-form__list
         = form.check_box :tag_ids, { multiple: true, include_hidden: false, class: "wrapper__contents__right__ul__search-form__list__checkbox" }, user_tag.id
-        -# = form.check_box :tag_ids, { multiple: true, include_hidden: false }, user_tag.id
-        -# form.check_box :配列名, { 複数のチェックボックスをひとまとめに扱うか, uncheck時に0の自動取得を回避 }, "チェック時に取得する値"
+        -# form.check_box :配列名, { 複数のチェックボックスをひとまとめに扱うか, uncheck時に0の自動取得を回避, class:"クラス名" }, "チェック時に取得する値"
         = form.label user_tag.name, class:"wrapper__contents__right__ul__search-form__list__name"
 
     = form.submit 'Search', class: 'wrapper__contents__right__ul__search-form__submit'

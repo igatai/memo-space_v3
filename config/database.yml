@@ -50,5 +50,10 @@ test:
 production:
   <<: *default
   database: memo-space_production
+  adapter: postgresql
+  # database: postgresql
+  encording: unicorde
+  pool: 5
   username: memo-space
+  url: <%= ENV['DATABASE_URL'] %>
   password: <%= ENV['MEMO-SPACE_DATABASE_PASSWORD'] %>

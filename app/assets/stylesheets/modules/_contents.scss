@@ -1,0 +1,16 @@
+&__contents {
+  @import "mixin/mixin";
+  @import "contents_left";
+  @import "contents_center";
+  @import "contents_right";
+  @import "contents_index";
+
+  background-image:  image-url("beach.jpg");
+  background-size:  cover;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+}

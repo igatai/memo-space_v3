@@ -21,3 +21,5 @@ public/uploads/*
 /app/assets/images/*
 
 config/secrets.yml
+
+.bundle/config

@@ -5,7 +5,8 @@
   @import "contents_right";
   @import "contents_index";
 
-  background-image:  image-url("beach.jpg");
+  // background-image:  image-url("beach.jpg");
+  background-image:  image_url("beach.jpg");
   background-size:  cover;
   overflow-y: scroll;
   overflow-x: hidden;

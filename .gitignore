@@ -20,7 +20,7 @@ public/uploads/*
 
 # /app/assets/images/*
 
-# config/secrets.yml
+config/secrets.yml
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key

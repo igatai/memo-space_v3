@@ -34,6 +34,11 @@ class TagsController < ApplicationController
 
   private
 
+  def tag_params
+    params.require(:tag).permit(:name).merge(user_id: current_user.id)
+
+  end
+
   def set_tag_memos
     @memos = Tag.find(params[:id]).memos
   end

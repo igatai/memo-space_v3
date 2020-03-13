@@ -29,7 +29,6 @@
   * Postgresql on production environment.
   * Relation between Tag and Memo are many to many.
 
-
 ## Database Design -
 
 #  users table
@@ -83,3 +82,4 @@
 * Association
   -- belongs_to :memo
   -- belongs_to :tag
+

@@ -26,7 +26,7 @@
   * Postgresql on production environment.
   * Relation between Tag and Memo are many to many.
 
-## Database Design -
+## Database Design
 
 ###  users table
 
@@ -38,8 +38,8 @@
   |name|string|null: false, index: true|
 
 * Association
-  has_many :memos
-  has_many :tags
+    has_many :memos
+    has_many :tags
 
 ###   memos table
 
@@ -52,9 +52,9 @@
   |user|references|null: false, foreign_key: true|
   |tag|references|null: false, foreign_key: true|
 * Association
-  has_many :tag_memos
-  has_many :tags, through: tag_memos
-  belongs_to :user
+    has_many :tag_memos
+    has_many :tags, through: tag_memos
+    belongs_to :user
 
 ###   tags table
 
@@ -64,9 +64,9 @@
   |name|string|null: false, index: true|
   |user|references|null: false, foreign_key: true|
 * Association
-  has_many :tag_memos
-  has_many :memos, through: tag_memos
-  belongs_to :user
+    has_many :tag_memos
+    has_many :memos, through: tag_memos
+    belongs_to :user
 
 ###   tag_memos table
 
@@ -77,5 +77,5 @@
   |tag|references|null: false, foreign_key: true|
 
 * Association
-  belongs_to :memo
-  belongs_to :tag
+    belongs_to :memo
+    belongs_to :tag

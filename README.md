@@ -1,14 +1,14 @@
 # README
 
 
-# Application Name
+## Application Name
     Memo Space
 
-# Overview ##
+## Overview ##
     In this application, text and images can be recorded and linked to multiple tags for management.
     By performing a search using AND conditions with multiple tags, you can easily find desired memo from a large number of memos.
 
-# Functions ##
+## Functions ##
     This application has following functions.
   * Posting memos.
   * Listing memos posted by user.
@@ -18,7 +18,7 @@
   * Controlling transaction.
   * Uploading images.
 
-# Technical elements ##
+## Technical elements ##
   * Carrierwave gem for uploading images.
   * Devise gem for user management.
   * Heroku as deploy environment.
@@ -26,9 +26,9 @@
   * Postgresql on production environment.
   * Relation between Tag and Memo are many to many.
 
-# Database Design -
+## Database Design -
 
-##  users table
+###  users table
 
 * Table Definition
   |Column|Type|Options|
@@ -41,7 +41,7 @@
   -- has_many :memos
   -- has_many :tags
 
-##   memos table
+###   memos table
 
 * Table Definition
   |Column|Type|Options|
@@ -56,7 +56,7 @@
   -- has_many :tags, through: tag_memos
   -- belongs_to :user
 
-##   tags table
+###   tags table
 
 * Table Definition
   |Column|Type|Options|
@@ -68,7 +68,7 @@
   -- has_many :memos, through: tag_memos
   -- belongs_to :user
 
-##   tag_memos table
+###   tag_memos table
 
 * Table Definition
   |Column|Type|Options|

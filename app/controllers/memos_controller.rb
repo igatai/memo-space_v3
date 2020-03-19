@@ -40,6 +40,8 @@ class MemosController < ApplicationController
 
   def set_memo_content
     @memo = Memo.find(params[:id])
+    @tags =@memo.tags
+    # binding.pry
   end
   def memo_params
     # tag_ids: [] ... model_name + __ids + 配列表記[] -> 中間テーブルに保存

@@ -10,6 +10,8 @@
     display: flex;
     justify-content: space-between;
     height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
 
     &__title{
       font-size: 40px;
@@ -27,15 +29,42 @@
   &__content{
     margin: 30px 30px 30px 30px;
     display: flex;
+    justify-content: space-between;
+    &__text{
+      color: white;  
+      font-size: 20px;
+      word-break: break-all;
+      padding-right: 20px;
+    }
     &__image{
       height: 300px;
       width: 300px;
       border-radius: 10px;
     }
-    &__text{
-      color: white;  
-      font-size: 30px;
-      word-break: break-all;
+  }
+  &__tags {
+    height: 35px;
+    font-size: 18px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 20px 60px;
+    display: flex;
+    border-radius: 5px;
+    color: darkblue;
+
+    .fas.fa-tags {
+      margin-left: 10px;
+      background-color: white;
+      margin-left: 15px;
+      line-height: 30px;
+      border-radius: 5px 0 0 5px;
+      padding: 5px 5px 5px 5px;
+    }
+    &__name {
+      background-color: white;
+      border-radius: 0 5px 5px 0;
+      padding: 5px 5px 5px 0;
     }
   }
   .fas.fa-.fa-edit {
@@ -47,4 +76,5 @@
     right: 0;
     margin: 0 20px 20px 0;
   }
+
 }

@@ -8,8 +8,8 @@
         .wrapper__contents__index__ul__list__title
           = memo.title
         .wrapper__contents__index__ul__list__content
-          = image_tag memo.image.url, class: 'image', size: '60x60' if memo.image.present?
           .wrapper__contents__index__ul__list__content__text
             = memo.text
+          = image_tag memo.image.url, class: 'image', size: '60x60' if memo.image.present?
         .wrapper__contents__index__ul__list__date
           = memo.updated_at.strftime("%Y年%m月%d日")

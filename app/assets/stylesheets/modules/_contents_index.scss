@@ -40,34 +40,39 @@
 
     &__list {
       
-      @include box;
+      @include list;
 
       &__title {
-        font-size: 15px;
-        color: brack;
+        // font-size: 15px;
+        // color: black;
+        @include list_title;
       }
       &__content {
-        margin-top: 30px;
-        display: flex;
+        // margin-top: 30px;
+        // display: flex;
+        @include list_content;
+
         &__image {
 
         }
         &__text {
-          margin-right: 20px;
-          font-size: 8px;
-          color: silver;
-          word-break: break-all;
+          // margin-right: 20px;
+          // font-size: 8px;
+          // color: silver;
+          // word-break: break-all;
+          @include list_content_text;
         }
       }
       &__date {
-        background-color: white;
-        font-size: 10px;
-        color: silver;
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        padding-left: 70px;
-        padding-bottom: 10px;
+        // background-color: white;
+        // font-size: 10px;
+        // color: silver;
+        // width: 100%;
+        // position: absolute;
+        // bottom: 0;
+        // padding-left: 70px;
+        // padding-bottom: 10px;
+        @include list_data;
       }
 
     }

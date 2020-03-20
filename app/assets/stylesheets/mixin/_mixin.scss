@@ -1,4 +1,4 @@
-@mixin box {
+@mixin list {
   border-radius: 10px 10px 10px 10px;
   height: 200px;
   width: 200px;
@@ -9,4 +9,31 @@
   position: relative;
   box-shadow: -60px 25px 5px 5px rgba(20,64,120,0.5);
   overflow: hidden;
+}
+
+@mixin list_title {
+  font-size: 15px;
+  color: darkblue;
+}
+
+@mixin list_content {
+  margin-top: 30px;
+  display: flex;
+}
+
+@mixin list_content_text {
+  margin-right: 20px;
+  font-size: 8px;
+  color: silver;
+  word-break: break-all;
+}
+
+@mixin list_data {
+  width: 100%;
+  background-color: white;
+  font-size: 10px;
+  color: silver;
+  position: absolute;
+  bottom: 0;
+  padding: 5px 0 5px 50px;
 }

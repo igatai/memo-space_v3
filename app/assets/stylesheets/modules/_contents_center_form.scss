@@ -1,78 +1,89 @@
-&__form {
-  height: 100%;
-  width: 800px;
-  padding: 0 20px 20px 0;
-  margin: 0 auto;
-  box-sizing: border-box;
+&__form#memo {
+  height: calc(100vh - 80px);
+  padding-top: 20px;
   color: white;
   font-size: 30px;
-
   h1 {
-    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
   }
 
-  .new_message {
-    p {
-      font-size: 20px;
-    }
-    &__title {
-      width: 750px;
-      height: 50px;
-      align-items: center;
-      border-radius: 10px;
-      font-size: 20px;
-      margin-bottom: 20px;
-      padding-left: 20px;
-    }
-    &__text {
-      width: 750px;
-      height: 400px;
-      align-items: center;
-      padding-right: 90px;
-      border-radius: 10px;
-      font-size: 20px;
-      margin-bottom: 20px;
-      padding-top:20px;
-      padding-left: 20px;
-    }
-    &__mask {
-      position: relative;
-
-      &__image {
-        position: absolute;
-        bottom: 30px;
-        right: 40px;
-        font-size: 2rem;
-        color: black;
-        #memo_image {
-          display: none;
+  form {
+    .new_message {
+      &__input {
+        display: flex;
+        justify-content: center;
+        &__form {
+          p {
+            font-size: 20px;
+          }
+          &__title {
+            width: 750px;
+            height: 50px;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-left: 20px;
+          }
+          &__text {
+            width: 750px;
+            height: 400px;
+            align-items: center;
+            padding-right: 90px;
+            border-radius: 10px;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-top:20px;
+            padding-left: 20px;
+          }
+          &__mask {
+            position: relative;
+            &__image {
+              position: absolute;
+              bottom: 30px;
+              right: 20px;
+              font-size: 4rem;
+              color: black;
+              #memo_image {
+                display: none;
+              }
+              &__file {
+      
+              }
+            }
+          }
         }
-        &__file {
-
+        &__tag {
+          padding-left: 30px;
+          font-size: 18px;
+          &__element {
+            width: 100%;
+            padding: 20px 20px 20px 20px;
+            margin: auto auto;
+            background-color: rgba(64,64,64,0.7);
+            border-radius: 5px;
+            &__label {
+              font-size: 20px;
+              display: block;
+              line-height: 35px;
+            }
+          }
         }
       }
-    }
-    &__tag {
-      font-size: 18px;
-    }
-    &__check_box {
-      line-height: 20px;
-      margin-bottom: 30px;
-    }
-    .label-checkbox {
-      margin-left: 30px;
-      font-size: 20px;
-    }
-
-    &__submit_btn {
-      width: 200px;
-      height: 60px;
-      border-radius: 5px;
-      font-size: 1.2em;
-      margin-bottom: 20px;
-      font-size: 30px;
-      line-height: 60px;
-      margin-left: 250px;
+      &__submit_btn {
+        width: 20%;
+        height: 40px;
+        border-radius: 5px;
+        font-size: 1.2em;
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 40px;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+      }
     }
   }
 }

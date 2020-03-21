@@ -1,18 +1,21 @@
 .new_message
   =form_for [@memo] do |f|
-    %p
-      title
-    = f.text_field :title, class: 'new_message__title',placeholder: 'type a title'
-    %p
-      content
-    = f.text_area :text, class: 'new_message__text',placeholder: 'type a message'
-    .new_message__mask
-      =f.label :image, class: 'new_message__mask__image' do
-        = icon('fas', 'image', class: 'icon')
-        = f.file_field :image, class: 'hidden'
-    %p.new_message__tag
-      タグ
-    .new_message__check_box
-      = f.collection_check_boxes :tag_ids, @user_tags, :id, :name do |b|
-        = b.label(class:"label-checkbox") { b.check_box + b.text }
+    .new_message__input
+      .new_message__input__form
+        %p
+          title
+        = f.text_field :title, class: 'new_message__input__form__title',placeholder: 'type a title'
+        %p
+          content
+        = f.text_area :text, class: 'new_message__input__form__text',placeholder: 'type a content'
+        .new_message__input__form__mask
+          =f.label :image, class: 'new_message__input__form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+      .new_message__input__tag
+        %p.new_message__input__tag__title
+          タグ
+        .new_message__input__tag__element
+          = f.collection_check_boxes :tag_ids, @user_tags, :id, :name do |b|
+            = b.label(class:"new_message__input__tag__element__label") { b.check_box + " " + b.text }
     = f.submit '登録', class: 'new_message__submit_btn'

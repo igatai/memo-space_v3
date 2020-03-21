@@ -1,7 +1,6 @@
 &__center {
   height: calc(100vh - #{$top_height});
-  width: calc(100vw - #{$right_width});
-  margin-top: #{$top_height};
+  width: 100vw;
   @import "contents_center_memo";
   @import "contents_center_form";
   @import "contents_center_form_tag";

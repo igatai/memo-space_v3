@@ -1,5 +1,5 @@
 class MemosController < ApplicationController
-  before_action :set_memo_content, only: [:show, :edit]
+  before_action :set_memo_content, only: [:show, :edit, :destroy]
 
   def index
 
@@ -34,6 +34,10 @@ class MemosController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @memo.destroy
   end
 
   private

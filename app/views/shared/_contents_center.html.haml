@@ -7,11 +7,15 @@
   .wrapper__contents__center__memo__content__text
     = simple_format(@memo.text) if @memo.text.present?
   = image_tag @memo.image.url, class: 'image', size: '300x300' if @memo.image.present?
-.wrapper__contents__center__memo__tags
-  - @tags.each do |tag|
-    %i.fas.fa-tags
-    .wrapper__contents__center__memo__tags__name
-      = simple_format(tag.name) if tag.present?
-.wrapper__contents__center__memo__icon
-  = link_to edit_memo_path(@memo) do
-    = icon('fas',' fa-edit')
+.wrapper__contents__center__memo__bottom
+  .wrapper__contents__center__memo__bottom__tags
+    - @tags.each do |tag|
+      %i.fas.fa-tags
+      .wrapper__contents__center__memo__bottom__tags__name
+        = simple_format(tag.name) if tag.present?
+  .wrapper__contents__center__memo__bottom__icon
+    .wrapper__contents__center__memo__bottom__icon__edit
+      = link_to edit_memo_path(@memo) do
+        = icon('fas',' fa-edit')
+    .wrapper__contents__center__memo__bottom__icon__delete
+      = link_to icon('fas',' fa-trash-alt'), memo_path(@memo), method: :delete

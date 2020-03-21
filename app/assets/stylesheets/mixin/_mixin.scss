@@ -1,13 +1,14 @@
 @mixin list {
   border-radius: 10px 10px 10px 10px;
-  height: 200px;
-  width: 200px;
+  height: 170px;
+  width: 170px;
   background-color: white;
-  padding: 30px;
+  padding: 20px;
   float: left;
-  margin: 0 70px 70px 0px;
+  margin: 35px 35px 35px 35px;
+  // margin: auto auto;
   position: relative;
-  box-shadow: -60px 25px 5px 5px rgba(20,64,120,0.5);
+  box-shadow: -60px 20px 8px 2px rgba(20,64,120,0.7);
   overflow: hidden;
 }
 
@@ -17,7 +18,7 @@
 }
 
 @mixin list_content {
-  margin-top: 30px;
+  margin-top: 10px;
   display: flex;
 }
 

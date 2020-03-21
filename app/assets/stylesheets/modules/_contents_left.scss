@@ -1,44 +1,30 @@
-$left_width: 350px;
-
 &__left {
   width: #{$left_width};
   height: calc(100vh - 80px);
   box-sizing: border-box;
   
   &__ul {
-    width: 350px;
+    width: 300px;
     height: calc(100vh - 80px);
-    padding: 80px 0 0 80px ;
+    padding: 80px 0 0 60px ;
 
     &__list {
-      @include box;
+      @include list;
 
       &__title {
-        font-size: 15px;
-        color: brack;
+        @include list_title;
       }
       &__content {
-        margin-top: 30px;
-        display: flex;
-
+        @include list_content;
         &__text {
-          margin-right: 20px;
-          font-size: 8px;
-          color: silver;
-          word-break: break-all;
+          @include list_content_text;
         }
         &__image {
 
         }
       }
       &__date {
-        width: 100%;
-        background-color: white;
-        font-size: 10px;
-        color: silver;
-        position: absolute;
-        bottom: 0;
-        padding: 5px 0 5px 50px;
+        @include list_data;
       }
     }
   }

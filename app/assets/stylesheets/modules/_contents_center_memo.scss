@@ -1,11 +1,10 @@
 &__memo{
-  min-height: 500px;
-  width: calc(100vw - $right_width - $left_width);
+  height: 700px;
+  width: calc(100vw - #{$right_width} - 200px);
   padding: 30px 30px 30px 30px;
-  margin: 80px 80px;
+  margin: auto auto;
   background-color: rgba(64,64,64,0.7);
   border-radius: 10px;
-  position: relative;
   &__info{
     display: flex;
     justify-content: space-between;
@@ -28,6 +27,7 @@
   }
   &__content{
     margin: 30px 30px 30px 30px;
+    min-height: 500px;
     display: flex;
     justify-content: space-between;
     &__text{
@@ -42,39 +42,46 @@
       border-radius: 10px;
     }
   }
-  &__tags {
-    height: 35px;
-    font-size: 18px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: 0 0 20px 60px;
+  &__bottom {
     display: flex;
-    border-radius: 5px;
-    color: darkblue;
-
-    .fas.fa-tags {
-      margin-left: 10px;
-      background-color: white;
-      margin-left: 15px;
-      line-height: 30px;
-      border-radius: 5px 0 0 5px;
-      padding: 5px 5px 5px 5px;
+    justify-content: space-between;
+    position: relative;
+    &__tags {
+      height: 35px;
+      font-size: 18px;
+      display: flex;
+      border-radius: 5px;
+      color: darkblue;
+  
+      .fas.fa-tags {
+        margin-left: 10px;
+        background-color: white;
+        margin-left: 15px;
+        line-height: 30px;
+        border-radius: 5px 0 0 5px;
+        padding: 5px 5px 5px 5px;
+      }
+      &__name {
+        background-color: white;
+        border-radius: 0 5px 5px 0;
+        padding: 5px 5px 5px 0;
+      }
     }
-    &__name {
-      background-color: white;
-      border-radius: 0 5px 5px 0;
-      padding: 5px 5px 5px 0;
+    &__icon {
+      width: 140px;
+      height: 50px;
+      display: flex;
+      .fas.fa-.fa-edit {
+        text-decoration: none;
+        color: white;
+        font-size: 40px;
+        margin: 0 40px 0 0;
+      }
+      .fas.fa-.fa-trash-alt {
+        text-decoration: none;
+        color: white;
+        font-size: 40px;
+      }
     }
   }
-  .fas.fa-.fa-edit {
-    text-decoration: none;
-    color: white;
-    font-size: 40px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 0 20px 20px 0;
-  }
-
 }

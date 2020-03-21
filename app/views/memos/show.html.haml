@@ -2,14 +2,8 @@
   .wrapper__top_bar
     = render "shared/top_bar"
   .wrapper__contents
-    .wrapper__contents__left
-      = render "shared/contents_left"
     .wrapper__contents__center
       .wrapper__contents__center__memo
         = render "shared/contents_center"
-        -# = link_to edit_memo_path(@memo) do
-        -#   = icon('fas',' fa-edit')
-      -# .wrapper__contents__center__tags
-      -#   = render "shared/contents_tags"
     .wrapper__contents__right
       = render "shared/contents_right"  

@@ -44,7 +44,7 @@ class MemosController < ApplicationController
 
   def set_memo_content
     @memo = Memo.find(params[:id])
-    @tags =@memo.tags
+    @tags = @memo.tags
     # binding.pry
   end
   def memo_params

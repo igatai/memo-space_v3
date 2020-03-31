@@ -1,0 +1,114 @@
+&__folder_index {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+
+  &__ul {
+    padding: 30px 30px 30px 30px;
+    list-style-type: none;
+    border-radius: 10px;
+    background-color: rgba(73, 72, 72, 0.7);
+    font-size: 10px;
+    margin: auto auto;
+
+    &__title{
+      color: white;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    &__tree {
+
+      &__folder {
+
+        &__list {
+          width: 220px;
+          height: 30px;
+          border-radius: 10px;
+          margin: 10px 10px 10px 10px;
+          padding: 0 0 0 10px;
+          // background-color: white;
+          text-align: center;
+          line-height: 30px;
+          display: flex;
+          color: white;
+          font-size: 20px;
+          &__icon {
+            font-size: 25px;
+          }
+  
+          a.wrapper__contents__folder_index__ul__tree__folder__list__name {
+            color: white;
+            margin-left: 10px;
+          }
+  
+        }
+      }
+
+      &__tag {
+        padding-left: 20px;
+        &__list {
+          width: 220px;
+          height: 30px;
+          border-radius: 10px;
+          margin: 10px 10px 10px 10px;
+          padding: 0 0 0 10px;
+          background-color: white;
+          text-align: center;
+          line-height: 30px;
+          display: flex;
+          color: darkblue;
+          font-size: 20px;
+          &__icon {
+            font-size: 18px;
+          }
+          a.wrapper__contents__folder_index__ul__tree__tag__list__name {
+            margin-left: 10px;
+            font-size: 18px;
+          }
+  
+        }
+
+      }
+
+    }
+    // &__search-form {
+    //   padding: 0 20px;
+    //   &__list {
+    //     width: 220px;
+    //     height: 30px;
+    //     border-radius: 10px;
+    //     margin: 20px 20px 20px 20px;
+    //     padding: 0 0 0 10px;
+    //     background-color: white;
+    //     text-align: center;
+    //     line-height: 30px;
+    //     display: flex;
+    //     &__icon {
+    //       padding-left: 20px;
+    //       padding-right: 20px;
+    //       text-decoration: none;
+    //     }
+    //     &__checkbox {
+    //       margin: auto 10px;
+    //       font-size: 20px;
+    //     }
+    //     &__name {
+    //       font-size: 15px;
+    //       color:darkblue;
+    //     }
+    //   }
+    //   &__submit {
+    //     height: 80px;
+    //     width: 30%;
+    //     margin-top: 30px;
+    //     font-size: 20px;
+    //     color:darkblue;
+    //     box-shadow: inset 0 3px 0 rgba(255,255,255,0.7), inset 0 -3px 0 rgba(0, 0, 0, 0.5);
+    //   }
+    // }
+  }
+}
+a {
+  color: darkblue;
+  text-decoration: none;
+}

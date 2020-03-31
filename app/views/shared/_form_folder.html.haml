@@ -1,0 +1,4 @@
+.new_folder
+  = form_for [@folder] do |f|
+    = f.text_field :name, class: 'new_folder__field',placeholder: 'type new folder name'
+    = f.submit '登録', class: 'new_folder__submit_btn'

@@ -1,16 +1,18 @@
 .wrapper__top_bar
-  .wrapper__top_bar__title
-    = link_to root_path, :method => :get do
-      %i.fas.fa-republican
-        MemoSpace
+  = link_to root_path, class: "wrapper__top_bar__title", :method => :get do
+    %i.fas.fa-republican
+      MemoSpace
   .wrapper__top_bar__btn
-    = link_to new_memo_path do
+    = link_to new_memo_path, class: "wrapper__top_bar__btn__new_file" do
       %p#new_file.fas.fa-plus-circle
       %i#new_file.far.fa-file-alt
-    = link_to new_tag_path do
+    = link_to new_tag_path, class: "wrapper__top_bar__btn__new_tag" do
       %p#new_tag.fas.fa-plus-circle
       %i#new_tag.fas.fa-tags
+    = link_to new_folder_path, class: "wrapper__top_bar__btn__new_folder" do
+      %p#new_folder.fas.fa-plus-circle
+      %i#new_folder.far.fa-folder
     %i.far.fa-user
       #{@user.name}
-    =link_to destroy_user_session_path, :method => :delete do
+    =link_to destroy_user_session_path, class: "wrapper__top_bar__btn__logout", :method => :delete do
       %i.fas.fa-.fa-sign-out-alt

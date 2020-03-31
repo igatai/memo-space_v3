@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :set_user
   before_action :set_memo_list
   before_action :set_users_tag_list
-
+  before_action :set_users_folder_list
 
   protected
   def configure_permitted_parameters
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def set_user
     @user = User.find(current_user.id) if current_user != nil
-   end
+  end
 
   def set_memo_list
     @memos = @user&.memos
@@ -23,6 +23,10 @@ class ApplicationController < ActionController::Base
 
   def set_users_tag_list
     @user_tags = @user&.tags
+    @tags_nofolder = @user_tags.where(folder_id: nil)
   end
 
+  def set_users_folder_list
+    @user_folders = @user&.folders
+  end
 end

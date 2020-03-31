@@ -22,6 +22,10 @@ class TagsController < ApplicationController
 
   end
 
+  def edit
+
+  end
+
   def search
     begin
       selected_tag_ids = selected_tags_params # Tag id array checked with form.
@@ -35,8 +39,7 @@ class TagsController < ApplicationController
   private
 
   def tag_params
-    params.require(:tag).permit(:name).merge(user_id: current_user.id)
-
+    params.require(:tag).permit(:name,:folder_id).merge(user_id: current_user.id)
   end
 
   def set_tag_memos

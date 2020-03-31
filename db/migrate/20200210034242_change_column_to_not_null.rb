@@ -1,4 +1,4 @@
-class ChangeColumnToNotNull < ActiveRecord::Migration[5.0]
+class ChangeColumnToNotNull < ActiveRecord::Migration[5.2]
   def change
     change_column_null :tags, :name, false
   end

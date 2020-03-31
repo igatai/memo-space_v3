@@ -10,9 +10,9 @@
           %li.wrapper__contents__right__ul__search-form__folder__list
             = form.check_box :tag_ids, { multiple: true, include_hidden: false, class: "wrapper__contents__right__ul__search-form__folder__list__checkbox" }, tag.id
             -# form.check_box :配列名, { 複数のチェックボックスをひとまとめに扱うか, uncheck時に0の自動取得を回避, class:"クラス名" }, "チェック時に取得する値"
+            .wrapper__contents__right__ul__search-form__folder__list__icon
+              = icon('fas',' fa-tags')
             = form.label tag.name, class:"wrapper__contents__right__ul__search-form__folder__list__name"
-            -# = link_to icon('fas',' fa-edit'), edit_tag_path(tag),class: "wrapper__contents__right__ul__search-form__folder__list__edit"
-            -# = link_to icon('fas',' fa-trash-alt'), tag_path(tag),class: "wrapper__contents__right__ul__search-form__folder__list__trash", method: :delete
       .wrapper__contents__right__ul__search-form__folder
         = icon('fas',' fa-folder')
         = "no folder"
@@ -20,8 +20,10 @@
           %li.wrapper__contents__right__ul__search-form__folder__list
             = form.check_box :tag_ids, { multiple: true, include_hidden: false, class: "wrapper__contents__right__ul__search-form__folder__list__checkbox" }, tag.id
             -# form.check_box :配列名, { 複数のチェックボックスをひとまとめに扱うか, uncheck時に0の自動取得を回避, class:"クラス名" }, "チェック時に取得する値"
+            .wrapper__contents__right__ul__search-form__folder__list__icon
+              = icon('fas',' fa-tags')
             = form.label tag.name, class:"wrapper__contents__right__ul__search-form__folder__list__name"
-    = form.submit '検索', class: "wrapper__contents__right__ul__search-form__folder__submit"
+    = form.submit '検索', class: "wrapper__contents__right__ul__search-form__submit"
   .wrapper__contents__right__ul__bottom
     %br.wrapper__contents__right__ul__bottom__guide
     = "※AND条件で絞り込み検索します。"

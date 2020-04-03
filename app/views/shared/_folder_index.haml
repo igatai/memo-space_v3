@@ -25,4 +25,5 @@
         %li.wrapper__contents__folder_index__ul__tree__tag__list
           .wrapper__contents__folder_index__ul__tree__tag__list__icon
             = icon('fas',' fa-tags')
-          = link_to tag.name,edit_tag_path(tag) , class: "wrapper__contents__folder_index__ul__tree__tag__list__name"
+          = link_to tag.name,'#' , class: "wrapper__contents__folder_index__ul__tree__tag__list__name"
+          -# = link_to tag.name,edit_tag_path(tag) , class: "wrapper__contents__folder_index__ul__tree__tag__list__name"

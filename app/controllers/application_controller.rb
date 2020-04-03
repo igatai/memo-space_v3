@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
   def set_users_tag_list
     @user_tags = @user&.tags
-    @tags_nofolder = @user_tags.where(folder_id: nil)
+    @tags_nofolder = @user_tags&.where(folder_id: nil)
   end
 
   def set_users_folder_list

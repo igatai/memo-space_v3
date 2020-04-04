@@ -15,15 +15,5 @@
               .wrapper__contents__folder_index__ul__tree__tag__list__icon
                 = icon('fas',' fa-tags')
               = link_to tag.name,edit_tag_path(tag) , class: "wrapper__contents__folder_index__ul__tree__tag__list__name"
-    .wrapper__contents__folder_index__ul__tree__folder
-      .wrapper__contents__folder_index__ul__tree__folder__list
-        .wrapper__contents__folder_index__ul__tree__folder__list__icon
-          = icon('fas',' fa-folder')
-        = link_to "No Folder",'#' , class: "wrapper__contents__folder_index__ul__tree__folder__list__name"
-    .wrapper__contents__folder_index__ul__tree__tag
-      - @tags_nofolder.each do |tag|
-        %li.wrapper__contents__folder_index__ul__tree__tag__list
-          .wrapper__contents__folder_index__ul__tree__tag__list__icon
-            = icon('fas',' fa-tags')
           = link_to tag.name,'#' , class: "wrapper__contents__folder_index__ul__tree__tag__list__name"
           -# = link_to tag.name,edit_tag_path(tag) , class: "wrapper__contents__folder_index__ul__tree__tag__list__name"

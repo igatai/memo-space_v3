@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_03_28_061112) do
     t.datetime "updated_at", null: false
     t.bigint "folder_id"
     t.index ["folder_id"], name: "index_tags_on_folder_id"
-    t.index ["name"], name: "index_tags_on_name", unique: true
     t.index ["user_id"], name: "index_tags_on_user_id"
   end
 

@@ -12,8 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    default_folder = Folder.create( name: 'DefaultFolder', user_id: current_user.id )
-    Tag.create( name: 'Temporary', user_id: current_user.id, folder_id: default_folder.id )
+    default_folder = Folder.create( name: 'DefaultFolder', user_id: current_user&.id )
+    Tag.create( name: 'Temporary', user_id: current_user&.id, folder_id: default_folder.id )
   end
 
   # GET /resource/edit

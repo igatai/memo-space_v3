@@ -18,12 +18,28 @@ class TagsController < ApplicationController
     end
   end
 
+  def update
+    tag = Tag.find(params[:id])
+    tag.update(tag_params)
+    redirect_to folders_path, notice: 'タグを更新しました'
+  end
+
   def show
 
   end
 
   def edit
+    @tag = Tag.find(params[:id])
+  end
 
+  def destroy
+    tag = Tag.find(params[:id])
+    memos = Tag.find(tag.id).memos
+    memos.each do |memo|
+      memo.tag_memos.destroy
+    end
+    tag.destroy
+    redirect_to folders_path, notice: 'タグを削除しました'
   end
 
   def search

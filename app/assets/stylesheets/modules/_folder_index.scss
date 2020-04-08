@@ -17,35 +17,47 @@
       margin-bottom: 20px;
     }
     &__tree {
-
       &__folder {
-
+        display: flex;
+        justify-content: space-between;
         &__list {
           width: 220px;
           height: 30px;
           border-radius: 10px;
           margin: 10px 10px 10px 10px;
           padding: 0 0 0 10px;
-          // background-color: white;
           text-align: center;
           line-height: 30px;
-          display: flex;
           color: white;
           font-size: 20px;
+          display: flex;
           &__icon {
             font-size: 25px;
           }
-  
-          a.wrapper__contents__folder_index__ul__tree__folder__list__name {
+          &__name {
             color: white;
-            margin-left: 10px;
+            padding-left: 10px;
           }
-  
+        }
+        &__button {
+          font-size: 18px;
+          display: flex;
+          justify-content: space-between;
+          a.wrapper__contents__folder_index__ul__tree__folder__button__edit {
+            color: white;
+            margin: auto 0;
+          }
+          a.wrapper__contents__folder_index__ul__tree__folder__button__delete {
+            color: white;
+            margin: auto 0;
+            padding-left: 20px;
+          }
         }
       }
-
       &__tag {
         padding-left: 20px;
+        display: flex;
+        justify-content: space-between;
         &__list {
           width: 220px;
           height: 30px;
@@ -61,15 +73,32 @@
           &__icon {
             font-size: 18px;
           }
-          a.wrapper__contents__folder_index__ul__tree__tag__list__name {
+          &__name {
             margin-left: 10px;
             font-size: 18px;
           }
-  
         }
-
+        &__button {
+          margin-left: 20px;
+          font-size: 18px;
+          display: flex;
+          justify-content: space-between;
+          a.wrapper__contents__folder_index__ul__tree__tag__edit {
+            color: white;
+            margin: auto 0;
+          }
+          a.wrapper__contents__folder_index__ul__tree__tag__delete {
+            color: white;
+            padding-left: 20px;
+            // font-size: 40px;
+            margin: auto 0;
+          }
+        }
+        // &__delete {
+        //   margin: auto;
+        //   font-size: 20px;
+        // }
       }
-
     }
     // &__search-form {
     //   padding: 0 20px;

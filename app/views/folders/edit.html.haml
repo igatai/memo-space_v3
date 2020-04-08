@@ -1,0 +1,12 @@
+.wrapper
+  .wrapper__top_bar
+    = render "shared/top_bar"
+  .wrapper__contents
+    .wrapper__contents__center
+      #tag.wrapper__contents__center__form
+        %h1 フォルダ登録
+        = render partial: 'shared/form_folder', locals: { tag: @folder }
+      -# #tag.wrapper__contents__center__delete
+      -#   = link_to icon('fas',' fa-trash-alt'), folder_path(@folder),class: "wrapper__contents__folder_index__ul__tree__folder__list__delete", method: :delete
+    .wrapper__contents__right
+      = render "shared/contents_right"

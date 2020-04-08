@@ -18,15 +18,19 @@ class FoldersController < ApplicationController
   end
 
   def edit
+    @folder = Folder.find(params[:id])
   end
 
   def destroy
+    # binding.pry
     @folder = Folder.find(params[:id])
     @tags = Tag.where(folder_id: @folder.id)
+    @default_folder = @user_folders.where(name: 'DefaultFolder')[0]
     @tags.each do |tag|
-      tag.update_column(:folder_id, nil)
+      tag.update_column(:folder_id, @default_folder.id)
     end
     @folder.destroy
+    redirect_to folders_path, notice: 'フォルダーを削除しました'
   end
 
   private

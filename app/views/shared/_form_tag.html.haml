@@ -3,7 +3,7 @@
     = f.text_field :name, class: 'new_tag__field',placeholder: 'type new tag name'
     .new_tag__folder
       .new_tag__folder__guide
-        = "タグフォルダ"
+        = "フォルダ"
       .new_tag__folder__selection
         - @user_folders.each do |folder|
           = f.radio_button :folder_id, folder.id

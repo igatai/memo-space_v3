@@ -55,6 +55,7 @@
   * has_many :tag_memos
   * has_many :tags, through: tag_memos
   * belongs_to :user
+  * has_one :event
 
 ###   tags table
 
@@ -62,11 +63,13 @@
   |Column|Type|Options|
   |------|----|-------|
   |name|string|null: false, index: true|
-  |user|references|null: false, foreign_key: true|
+  |user_id|references|null: false, foreign_key: true|
+  |folder_id|references|foreign_key|
 #### Association
   * has_many :tag_memos
   * has_many :memos, through: tag_memos
   * belongs_to :user
+  * belongs_to :folder
 
 ###   tag_memos table
 
@@ -79,3 +82,33 @@
 #### Association
   * belongs_to :memo
   * belongs_to :tag
+
+
+### Folders table
+
+#### Table Definition
+  |Column|Type|Options|
+  |------|----|-------|
+  |name|string|null: false|
+  |user_id|references|foreign_key: true|
+
+#### Association
+  * has_many :tags
+
+
+### Event table
+
+#### Table Definition
+  |Column|Type|Options|
+  |------|----|-------|
+  |title|references|foreign_key: true|
+  |text|references|foreign_key: true|
+  |image|references|foreign_key: true|
+  |user|references|null: false, foreign_key: true|
+  |tag|references|null: false, foreign_key: true|
+  |allDay|boolean||
+  |start_date|datetime||
+  |end_date|datetime||
+
+#### Association
+  * belongs_to :memos

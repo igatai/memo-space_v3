@@ -101,14 +101,12 @@
 #### Table Definition
   |Column|Type|Options|
   |------|----|-------|
-  |title|references|foreign_key: true|
-  |text|references|foreign_key: true|
-  |image|references|foreign_key: true|
+  |memo|references|null: false, foreign_key: true|
   |user|references|null: false, foreign_key: true|
   |tag|references|null: false, foreign_key: true|
-  |allDay|boolean||
-  |start_date|datetime||
-  |end_date|datetime||
+  |allday|boolean||
+  |start|datetime||
+  |end|datetime||
 
 #### Association
   * belongs_to :memos

@@ -68,3 +68,6 @@ gem 'devise'
 gem 'carrierwave'
 
 gem 'pry-rails'
+
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'

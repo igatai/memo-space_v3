@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'events/index'
+  get 'events/show'
+  get 'events/new'
+  get 'events/edit'
+  get 'events/create'
   # devise_for :users
 
   devise_for :users, controllers: {
@@ -8,10 +13,16 @@ Rails.application.routes.draw do
   root "memos#index"
   resources :users, only: [:new, :edit, :update]
   resources :memos, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :events, only:[:index, :show, :new, :create, :edit, :update, :destroy]
   resources :folders,  only:[:index, :show, :new, :create, :edit, :update, :destroy]
   resources :tags,  only:[:index, :show, :new, :create, :edit, :update, :destroy] do
     collection do
       get 'search'
+    end
+  end
+  namespace :api, { format: 'json' } do
+    namespace :v1 do
+      resources :events
     end
   end
 end

@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var select = function(start, end) {
     var title = window.prompt("title");
+    var content = window.prompt("content");
     start_time = start.unix()
     var d = new Date( start_time * 1000 );
     var year = d.getYear() + 1900;
@@ -22,6 +23,7 @@ $(document).ready(function() {
     var data = {
       event: {
         title: title,
+        content: content,
         start: start_time,
         end: end_time,
         allday: 0
@@ -39,9 +41,9 @@ $(document).ready(function() {
   };
   var calendar = $('#calendar').fullCalendar({
     header: {
-      left: 'prev,next today',
+      left: 'month,agendaWeek,agendaDay',
       center: 'title',
-      right: 'month,agendaWeek,agendaDay'
+      right: 'prev,next today'
     },
     axisFormat: 'H:mm',
     timeFormat: 'H:mm',
@@ -109,6 +111,7 @@ $(document).ready(function() {
       var data = {
         event: {
           title: event.title,
+          content: event.content,
           start: start_time,
           end: end_time,
           allday: 0
@@ -146,6 +149,7 @@ $(document).ready(function() {
       var data = {
         event: {
           title: event.title,
+          content: event.content,
           start: start_time,
           end: end_time,
           allday: 0

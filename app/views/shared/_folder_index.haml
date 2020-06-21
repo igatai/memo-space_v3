@@ -11,7 +11,7 @@
             = user_folder.name
         .wrapper__contents__folder_index__ul__tree__folder__button
           = link_to icon('fas',' fa-edit'), edit_folder_path(user_folder), class: "wrapper__contents__folder_index__ul__tree__folder__button__edit"
-          = link_to icon('fas',' fa-trash-alt'), folder_path(user_folder),class: "wrapper__contents__folder_index__ul__tree__folder__button__delete", method: :delete
+          = link_to icon('fas',' fa-trash-alt'), folder_path(user_folder), class: "wrapper__contents__folder_index__ul__tree__folder__button__delete", method: :delete
       - user_folder.tags.each do |tag|
         .wrapper__contents__folder_index__ul__tree__tag
           %li.wrapper__contents__folder_index__ul__tree__tag__list

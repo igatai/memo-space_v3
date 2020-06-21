@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_012332) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
+    t.string "content"
     t.datetime "start"
     t.datetime "end"
     t.string "color"
@@ -30,7 +31,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_012332) do
     t.index ["user_id"], name: "index_folders_on_user_id"
   end
 
-  create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "varcha", force: :cascade do |t|
     t.string "title", null: false
     t.string "text"
     t.string "image"

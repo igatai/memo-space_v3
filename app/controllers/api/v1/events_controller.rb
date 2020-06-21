@@ -25,6 +25,7 @@ module Api
       def update
         @event = Event.find(params[:id])
         event_params.require(:title)
+        event_params.require(:content)
         event_params.require(:start)
         event_params.require(:end)
         respond_to do |format|
@@ -44,6 +45,7 @@ module Api
 
       def create
         event_params.require(:title)
+        event_params.require(:content)
         event_params.require(:start)
         event_params.require(:end)
         # event_params.require(:color)
@@ -70,6 +72,7 @@ module Api
           params[:event]
           .permit(
             :title,
+            :content,
             :start,
             :end,
             :color,

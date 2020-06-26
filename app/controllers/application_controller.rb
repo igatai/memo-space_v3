@@ -14,11 +14,21 @@ class ApplicationController < ActionController::Base
   end
 
   def set_user
-    @user = User.find(current_user.id) if current_user != nil
+    @user = User.find(current_user&.id) if current_user != nil
+    cookies[:user_id] = current_user&.id if current_user != nil
   end
 
   def set_memo_list
     @memos = @user&.memos
+  end
+
+  def set_event_list
+    @events = @user&.events
+  end
+
+  def set_wrapper_list
+    @wrapper = Array.new
+    @wrapper = (@memos + @events).sort! { |obj| obj.updated_at }.reverse
   end
 
   def set_users_tag_list

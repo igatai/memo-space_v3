@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.all
+    @events = Event.where(user_id: current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -68,7 +68,8 @@ class EventsController < ApplicationController
       :start,
       :end,
       :color,
-      :allday
+      :allday,
+      :user_id
     )
   end
 end

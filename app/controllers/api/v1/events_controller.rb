@@ -8,7 +8,7 @@ module Api
       protect_from_forgery except: [:create, :update]
 
       def index
-        @events = Event.order(:id).limit(params[:limit]).offset(params[:offset])
+        @events = Event.where(user_id: current_user.id).order(:id).limit(params[:limit]).offset(params[:offset])
         json = @events
         render json: json.to_json
       end
@@ -28,6 +28,7 @@ module Api
         event_params.require(:content)
         event_params.require(:start)
         event_params.require(:end)
+        event_params.require(:user_id)
         respond_to do |format|
           format.any
           if @event.update!(event_params)
@@ -48,6 +49,7 @@ module Api
         event_params.require(:content)
         event_params.require(:start)
         event_params.require(:end)
+        event_params.require(:user_id)
         # event_params.require(:color)
         # event_params.require(:allday)
         @event = Event.new(event_params)
@@ -76,7 +78,8 @@ module Api
             :start,
             :end,
             :color,
-            :allday
+            :allday,
+            :user_id
           )
         end
     end

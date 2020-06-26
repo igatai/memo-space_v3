@@ -40,6 +40,7 @@
 #### Association
   * has_many :memos
   * has_many :tags
+  * has_many :event
 
 ###   memos table
 
@@ -55,7 +56,6 @@
   * has_many :tag_memos
   * has_many :tags, through: tag_memos
   * belongs_to :user
-  * has_one :event
 
 ###   tags table
 
@@ -96,17 +96,18 @@
   * has_many :tags
 
 
-### Event table
+### Events table
 
 #### Table Definition
   |Column|Type|Options|
   |------|----|-------|
-  |memo|references|null: false, foreign_key: true|
-  |user|references|null: false, foreign_key: true|
-  |tag|references|null: false, foreign_key: true|
-  |allday|boolean||
+  |title|varchar||
+  |content|varchar||
   |start|datetime||
   |end|datetime||
+  |color|varchar||
+  |allday|tinyint||
+  |user_id|references|null: false, foreign_key: true|
 
 #### Association
-  * belongs_to :memos
+  * belongs_to :user

@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  get 'wrappers/index'
+  get 'wrappers/show'
   get 'events/index'
   get 'events/show'
   get 'events/new'
   get 'events/edit'
   get 'events/create'
-  # devise_for :users
 
+  # devise_for :users
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }

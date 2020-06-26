@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 2020_06_03_012332) do
     t.datetime "end"
     t.string "color"
     t.boolean "allday"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "folders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,6 +75,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_012332) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "users"
   add_foreign_key "folders", "users"
   add_foreign_key "memos", "users"
   add_foreign_key "tag_memos", "memos"

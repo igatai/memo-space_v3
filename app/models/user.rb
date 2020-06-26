@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :memos
   has_many :tags
   has_many :folders
+  has_many :events
 end

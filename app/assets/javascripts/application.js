@@ -14,26 +14,25 @@
 //= require moment
 //= require fullcalendar
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require_tree .
 
-$(function(){
-  $(document).on('turbolinks:load', function(){
-    if ($('#calendar').length){
-      function eventCalendar(){
-        return $('#calendar').fullCalendar({ });
-      };
-      function clearCalendar(){
+$(function () {
+  // 画面遷移を検知
+  $(document).on('turbolinks:load', function () {
+    if ($('#calendar').length) {
+      function Calendar() {
+        return $('#calendar').fullCalendar({
+        });
+      }
+      function clearCalendar() {
         $('#calendar').html('');
-      };
-      $(document).on('turbolinks:load', function(){
-        eventCalendar();
+      }
+      $(document).on('turbolinks:load', function () {
+        Calendar();
       });
-      $(document).on('turbolinks:begore-cache', clearCalendar);
-
-      $('#calendar').fullCalendar({
-        events: '/events.json'
-      });
+      $(document).on('turbolinks:before-cache', clearCalendar);
     }
-  })
+  });
 });

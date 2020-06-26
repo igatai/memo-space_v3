@@ -20,13 +20,22 @@ $(document).ready(function() {
     var min   = ( d.getMinutes() < 10 ) ? '0' + d.getMinutes() : d.getMinutes();
     var moment_end = year+"-"+month+"-"+day+" "+hour+":"+min;
     var end_time = moment(moment_end).add(-9, 'hour').format("YYYY-MM-DD HH:mm");
+    var cookies = document.cookie;
+    var cookiesArray = cookies.split(';');
+    for (var c of cookiesArray){
+      var cArray = c.split('=');
+      if (cArray[0] == " user_id"){
+        var user_id = cArray[1]
+      }
+    }
     var data = {
       event: {
         title: title,
         content: content,
         start: start_time,
         end: end_time,
-        allday: 0
+        allday: 0,
+        user_id: user_id
       }
     }
     $.ajax({
@@ -40,11 +49,14 @@ $(document).ready(function() {
     calendar.fullCalendar('unselect');
   };
   var calendar = $('#calendar').fullCalendar({
+    //ボタンのレイアウト
     header: {
       left: 'month,agendaWeek,agendaDay',
       center: 'title',
-      right: 'prev,next today'
+      right: 'prev, today ,next'
     },
+    //カレンダー上部を年月で表示させる
+    titleFormat: 'YYYY年 M月',
     axisFormat: 'H:mm',
     timeFormat: 'H:mm',
     monthNames: ['１月','２月','３月','４月','５月','６月','７月','８月','９月','１０月','１１月','１２月'],
@@ -56,6 +68,8 @@ $(document).ready(function() {
     selectable: true,      // 選択可
     selectHelper: true,    // 選択時にプレースホルダーを描画
     ignoreTimezone: false, // 自動選択解除
+    eventColor: '#87cefa', //イベントの色を変える
+    eventTextColor: '#000000', //イベントの文字色を変える
     select: select,        // 選択時に関数にパラメータ引き渡す
     buttonText: {
       prev:     '<',   // &lsaquo;
@@ -68,7 +82,7 @@ $(document).ready(function() {
       day:      '日'
     },
     height: 800,                           // 高さ
-    defaultView: 'agendaWeek',             // 初期表示ビュー
+    defaultView: 'month',             // 初期表示ビュー
     eventLimit: true,                      // allow "more" link when too many events
     firstDay: 0,                           // 最初の曜日, 0:日曜日
     weekends: true,                        // 土曜、日曜を表示
@@ -92,7 +106,7 @@ $(document).ready(function() {
     eventResize: function(event) { //イベントをサイズ変更した際に実行
       var id = event.id
       var update_url = "/api/v1/events/"+id
-      var event_start_time = event._start._d
+      var event_start_time = event.start._d
       var year = event_start_time.getYear() + 1900;
       var month = event_start_time.getMonth() + 1;
       var day   = event_start_time.getDate();
@@ -100,7 +114,7 @@ $(document).ready(function() {
       var min   = ( event_start_time.getMinutes() < 10 ) ? '0' + event_start_time.getMinutes() : event_start_time.getMinutes();
       var moment_start = year+"-"+month+"-"+day+" "+hour+":"+min;
       var start_time = moment(moment_start).add(-9, 'hour').format("YYYY-MM-DD HH:mm");
-      var event_end_time = event._end._d
+      var event_end_time = event.end._d
       var year = event_end_time.getYear() + 1900;
       var month = event_end_time.getMonth() + 1;
       var day   = event_end_time.getDate();
@@ -108,13 +122,22 @@ $(document).ready(function() {
       var min   = ( event_end_time.getMinutes() < 10 ) ? '0' + event_end_time.getMinutes() : event_end_time.getMinutes();
       var moment_end = year+"-"+month+"-"+day+" "+hour+":"+min;
       var end_time = moment(moment_end).add(-9, 'hour').format("YYYY-MM-DD HH:mm");
+      var cookies = document.cookie;
+      var cookiesArray = cookies.split(';');
+      for (var c of cookiesArray){
+        var cArray = c.split('=');
+        if (cArray[0] == ' user_id'){
+          var user_id = cArray[1]
+        }
+      }
       var data = {
         event: {
           title: event.title,
           content: event.content,
           start: start_time,
           end: end_time,
-          allday: 0
+          allday: 0,
+          user_id: user_id
         }
       }
       $.ajax({
@@ -130,7 +153,7 @@ $(document).ready(function() {
     eventDrop: function(event) { //イベントをドラッグ&ドロップした際に実行
       var id = event.id
       var update_url = "/api/v1/events/"+id
-      var event_start_time = event._start._d
+      var event_start_time = event.start._d
       var year = event_start_time.getYear() + 1900;
       var month = event_start_time.getMonth() + 1;
       var day   = event_start_time.getDate();
@@ -138,7 +161,7 @@ $(document).ready(function() {
       var min   = ( event_start_time.getMinutes() < 10 ) ? '0' + event_start_time.getMinutes() : event_start_time.getMinutes();
       var moment_start = year+"-"+month+"-"+day+" "+hour+":"+min;
       var start_time = moment(moment_start).add(-9, 'hour').format("YYYY-MM-DD HH:mm");
-      var event_end_time = event._end._d
+      var event_end_time = event.end._d
       var year = event_end_time.getYear() + 1900;
       var month = event_end_time.getMonth() + 1;
       var day   = event_end_time.getDate();
@@ -146,13 +169,22 @@ $(document).ready(function() {
       var min   = ( event_end_time.getMinutes() < 10 ) ? '0' + event_end_time.getMinutes() : event_end_time.getMinutes();
       var moment_end = year+"-"+month+"-"+day+" "+hour+":"+min;
       var end_time = moment(moment_end).add(-9, 'hour').format("YYYY-MM-DD HH:mm");
+      var cookies = document.cookie;
+      var cookiesArray = cookies.split(';');
+      for (var c of cookiesArray){
+        var cArray = c.split('=');
+        if (cArray[0] == ' user_id'){
+          var user_id = cArray[1]
+        }
+      }
       var data = {
         event: {
           title: event.title,
           content: event.content,
           start: start_time,
           end: end_time,
-          allday: 0
+          allday: 0,
+          user_id: user_id
         }
       }
       $.ajax({

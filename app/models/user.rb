@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :tags
   has_many :folders
   has_many :events
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
 end

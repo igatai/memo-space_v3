@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :folders
   has_many :events
   validates :name, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
+  # validates :email, presence: true
   validates :password, presence: true
 end

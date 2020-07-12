@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_06_03_012332) do
 
-  create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "content"
     t.datetime "start"
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_012332) do
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
-  create_table "folders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "folders", force: :cascade do |t|
     t.string "name", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_012332) do
     t.index ["user_id"], name: "index_folders_on_user_id"
   end
 
-  create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "memos", force: :cascade do |t|
     t.string "title", null: false
     t.string "text"
     t.string "image"
@@ -43,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_012332) do
     t.index ["user_id"], name: "index_memos_on_user_id"
   end
 
-  create_table "tag_memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tag_memos", force: :cascade do |t|
     t.bigint "tag_id"
     t.bigint "memo_id"
     t.datetime "created_at", null: false
@@ -52,7 +55,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_012332) do
     t.index ["tag_id"], name: "index_tag_memos_on_tag_id"
   end
 
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -62,7 +65,7 @@ ActiveRecord::Schema.define(version: 2020_06_03_012332) do
     t.index ["user_id"], name: "index_tags_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
     t.string "encrypted_password", default: "", null: false

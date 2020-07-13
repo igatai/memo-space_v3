@@ -28,6 +28,6 @@ RUN mkdir /myproject
 WORKDIR /myproject
 COPY Gemfile Gemfile.lock /myproject/
 RUN rm /myproject/Gemfile.lock
-# RUN gem install bundler
-RUN bundler update
-# RUN bundle install
+RUN gem install bundler
+# RUN bundler update
+RUN bundle install

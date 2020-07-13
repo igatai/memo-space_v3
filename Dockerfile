@@ -28,6 +28,7 @@ RUN mkdir /myproject
 WORKDIR /myproject
 COPY Gemfile Gemfile.lock /myproject/
 RUN rm /myproject/Gemfile.lock
-RUN gem install bundler
+RUN gem uninstall bundler
+RUN gem install bundler -v 1.16.6
 # RUN bundler update
 RUN bundle install

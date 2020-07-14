@@ -23,12 +23,15 @@ RUN apt-get update && apt-get install -y \
       nodejs \
       postgresql-client \
       yarn
-# RUN rm -rf /var/lib/apt/lists/*
-RUN mkdir /myproject
-WORKDIR /myproject
-COPY Gemfile Gemfile.lock /myproject/
-RUN rm /myproject/Gemfile.lock
-RUN gem uninstall bundler
-RUN gem install bundler -v 1.16.6
+RUN rm -rf /var/lib/apt/lists/*
+
+ENV APP_HOME /myproject
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
+COPY Gemfile $APP_HOME
+COPY Gemfile.lock $APP_HOME
+# RUN rm /myproject/Gemfile.lock
+# RUN gem uninstall bundler
+# RUN gem install bundler -v 1.16.6
 # RUN bundler update
 RUN bundle install

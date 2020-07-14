@@ -34,6 +34,6 @@ COPY Gemfile.lock $APP_HOME
 RUN bundle _1.16.6_ install
 # RUN rm /myproject/Gemfile.lock
 # RUN gem uninstall bundler
-# RUN gem install bundler -v 1.16.6
+RUN gem install bundler -v 1.16.6
 # RUN bundler update
 # RUN bundle install

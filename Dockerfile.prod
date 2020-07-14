@@ -5,11 +5,9 @@ RUN apt-get update && apt-get install -y \
       nodejs \
       postgresql-client \
       yarn
-RUN mkdir /myproject
 WORKDIR /myproject
-ADD . /myproject
-COPY Gemfile /myproject/Gemfile
-COPY Gemfile.lock /myproject/Gemfile.lock
+COPY Gemfile Gemfile.lock /myproject/
 RUN gem install bundler
 RUN bundle install
-
+COPY . .
+CMD ["rails","s"]

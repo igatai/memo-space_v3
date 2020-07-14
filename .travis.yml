@@ -5,7 +5,23 @@ service: docker
 before_install:
   - docker-compose up --build -d
 
+  # description for heroku
+  - docker login -u "HEROKU_USERNAME" -p "HEROKU_API_KEY" registry.heroku.com
+
 script:
   - docker-compose exec --env 'RAILS_ENV=test' web rails db:create
   - docker-compose exec --env 'RAILS_ENV=test' web rails db:migrate
   - docker-compose exec --env 'RAILS_ENV=test' web bundle exec rspec
+
+# description for heroku
+deploy:
+  provider: script
+  script:
+    # -t リポジトリ名を指定 -f Dockerfile本番環境用
+    docker build -t registry.heroku.com/$HEROKU_APP_NAME/web -f Dockerfile.prod .;
+    # レジストリにイメージをpushする
+    docker push registry.heroku.com/$HEROKU_APP_NAME/web;
+    # rails db:migrateを実行してDBを構成
+    heroku run --app $HEROKU_APP_NAME rails db:migrate;
+  on:
+    branch: master

@@ -30,7 +30,7 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 COPY Gemfile $APP_HOME
 COPY Gemfile.lock $APP_HOME
-RUN bundle _1.16.6_ install
+RUN bundler _1.16.6_ install
 # RUN rm /myproject/Gemfile.lock
 # RUN gem uninstall bundler
 # RUN gem install bundler -v 1.16.6

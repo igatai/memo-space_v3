@@ -36,4 +36,4 @@ RUN bundle _1.16.6_ install
 # RUN gem uninstall bundler
 # RUN gem install bundler -v 1.16.6
 # RUN bundler update
-RUN bundle install
+# RUN bundle install

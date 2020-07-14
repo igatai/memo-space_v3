@@ -16,8 +16,7 @@
 
 ## For Postgresql running on container environment
 
-# FROM ruby:2.5.3
-FROM ruby:2.5.1
+FROM ruby:2.5.3
 RUN apt-get update && apt-get install -y \
       build-essential \
       libpq-dev \
@@ -34,6 +33,6 @@ COPY Gemfile.lock $APP_HOME
 RUN bundle _1.16.6_ install
 # RUN rm /myproject/Gemfile.lock
 # RUN gem uninstall bundler
-RUN gem install bundler -v 1.16.6
+# RUN gem install bundler -v 1.16.6
 # RUN bundler update
 # RUN bundle install

@@ -1,11 +1,13 @@
+# 権限設定
 sudo: required
 
+# Dockerを使う
 service: docker
 
+# インストール前に実行
 before_install:
   - docker-compose up --build -d
-  - docker login -u "_" -p "$HEROKU_API_KEY" registry.heroku.com
-  # - docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" registry.heroku.com
+  - docker login -u "$HEROKU_USERNAME" -p "$HEROKU_API_KEY" registry.heroku.com
 
 script:
   - docker-compose exec --env 'RAILS_ENV=test' web rails db:create

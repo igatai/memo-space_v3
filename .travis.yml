@@ -21,6 +21,4 @@ deploy:
     # rails db:migrateを実行してDBを構成
     heroku run --app $HEROKU_APP_NAME rails db:migrate;
   on:
-    branch:
-      - master
-      # - DeployWIthTravisCI
+    branch: master

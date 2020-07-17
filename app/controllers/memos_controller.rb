@@ -2,7 +2,7 @@ class MemosController < ApplicationController
   before_action :set_memo_content, only: [:show, :edit, :destroy]
 
   def index
-
+    
   end
 
   def new

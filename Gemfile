@@ -76,3 +76,6 @@ gem 'pry-rails'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'jquery-ui-rails'
+
+gem 'kaminari', '~> 0.17.0'
+gem 'kaminari-bootstrap', '~> 3.0.1'

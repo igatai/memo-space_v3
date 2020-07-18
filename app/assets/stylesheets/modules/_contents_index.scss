@@ -30,10 +30,6 @@
   &__ul {
     margin: 0 auto;
     display: inline-block;
-    a {
-      height: 170px;
-      width: 400px;
-    }
 
     &__list {
       @include list;
@@ -51,8 +47,60 @@
       &__date {
         @include list_data;
       }
-
     }
   }
+  a {
+    border: none;
+    background-color: black;
+  }
+}
 
+.wrapper__contents__index__pagination {
+  ul.pagination {
+    // text-align: center;
+    margin:0 auto;
+    li.page.active {
+      a {
+        border: none;
+        background-color: rgba(0, 0, 0, 0.7);
+        // background-color: rgba(73, 72, 72, 0.7);
+        background-color: black;
+      }
+    }
+    li.page {
+      a {
+        border: none;
+        background-color: rgba(73, 72, 72, 0.7);
+        color: white;
+      }
+    }
+    li.first {
+      a {
+        border: none;
+        background-color: rgba(73, 72, 72, 0.7);
+        color: white;
+      }
+    }
+    li.prev {
+      a {
+        border: none;
+        background-color: rgba(73, 72, 72, 0.7);
+        color: white;
+      }
+    }
+    li.next {
+      a {
+        border: none;
+        background-color: rgba(73, 72, 72, 0.7);
+        color: white;
+      }
+    }
+    li.last {
+      a {
+        border: none;
+        background-color: rgba(73, 72, 72, 0.7);
+        color: white;
+      }
+    }
+  }
 }

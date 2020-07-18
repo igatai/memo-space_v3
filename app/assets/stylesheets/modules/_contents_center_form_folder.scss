@@ -1,8 +1,5 @@
 &__form#folder {
-
-  // height: calc(100vh - 80px);
-  // height: 900px;
-  // padding-top: 200px;
+  height: calc(100vh - 80px);
   color: white;
   margin: auto auto;
   font-size: 30px;
@@ -19,6 +16,11 @@
       height: 80px;
       font-size: 30px;
       border-radius: 10px;
+      border-top-color: gray;
+      border-right-color: gray;
+      border-left-color: white;
+      border-bottom-color: white;
+      border-width: 1px;
       padding-left: 15px;
       margin: 20px 80px 20px 80px;
     }
@@ -26,24 +28,16 @@
       width: 35%;
       height: 40px;
       border-radius: 5px;
+      border-top: none;
+      border-width: 2px;
+      border-top: none;
+      border-right: none;
+      border-left-color: gray;
+      border-bottom-color: gray;
       display: block;
       margin: 0 auto;
       font-size: 20px;
+      color: black;
     }
   }
 }
-// &__delete {
-//   padding: 20px 30px 0 0 ;
-//   i.fas.fa-.fa-trash-alt {
-//     padding: 50px 170px 0 0;
-//     font-size: 40px;
-//     color: white;
-//     // align-items: center;
-//     // text-align: center;
-//     display: block;
-//     // margin-right: auto;
-//     text-align: right;
-//     // margin: 20px 0 0 auto;
-//     // float: right;
-//   }
-// }

@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_memo_list
-    @memos = @user&.memos
+    @memos = Memo.includes(:user).where(user_id: current_user.id).page(params[:page]).per(10) if current_user != nil
   end
 
   def set_event_list

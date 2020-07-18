@@ -1,19 +1,19 @@
 &__index {
-  width: calc(100vw - #{$right_width});
+  width: calc(100vw - $right_width - 20px);
   height: calc(100vh - 80px);
   box-sizing: border-box;
   margin: 0 auto;
-  padding-left: 50px;
+
+  position: relative;
 
   &__head {
     color: white;
     height: 50px;
     width: calc(100vw - 300px);
-    width: 100%;
 
     &__sub_title {
       font-size: 20px;
-      padding-top: 30px;
+      padding-top: 20px;
       text-align: center;
     }
     .fas.fa-.fa-plus-circle {
@@ -28,12 +28,14 @@
   }
 
   &__ul {
-    margin: 0 auto;
+    margin: auto auto;
     display: inline-block;
-    a {
-      height: 170px;
-      width: 400px;
-    }
+    width: 90%;
+    height: 100%;
+
+    position: absolute;
+    top: 10%;
+    left: 5%;
 
     &__list {
       @include list;
@@ -51,8 +53,60 @@
       &__date {
         @include list_data;
       }
-
     }
   }
+  a {
+    border: none;
+    background-color: black;
+  }
+}
 
+.wrapper__contents__index__pagination {
+  position: fixed;
+  bottom: 10px;
+  left: 40%;
+  ul.pagination {
+    li.page.active {
+      a {
+        border: none;
+        background-color: rgba(10, 10, 10, 10.7);
+        background-color: black;
+      }
+    }
+    li.page {
+      a {
+        border: none;
+        background-color: rgba(73, 72, 72, 0.7);
+        color: white;
+      }
+    }
+    li.first {
+      a {
+        border: none;
+        background-color: rgba(73, 72, 72, 0.7);
+        color: white;
+      }
+    }
+    li.prev {
+      a {
+        border: none;
+        background-color: rgba(73, 72, 72, 0.7);
+        color: white;
+      }
+    }
+    li.next {
+      a {
+        border: none;
+        background-color: rgba(73, 72, 72, 0.7);
+        color: white;
+      }
+    }
+    li.last {
+      a {
+        border: none;
+        background-color: rgba(73, 72, 72, 0.7);
+        color: white;
+      }
+    }
+  }
 }

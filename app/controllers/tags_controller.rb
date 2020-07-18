@@ -46,7 +46,7 @@ class TagsController < ApplicationController
     begin
       selected_tag_ids = selected_tags_params # Tag id array checked with form.
       filtered_memo_ids = Memo.filter(selected_tag_ids) # Memo id array filtered with checked tag by And condition.
-      @memos = Memo.where(id: filtered_memo_ids) # Memos instance selected with filtered memo ids.
+      @memos = Memo.where(id: filtered_memo_ids).page(params[:page]) # Memos instance selected with filtered memo ids.
     rescue
       redirect_to root_path
     end

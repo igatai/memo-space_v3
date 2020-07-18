@@ -1,7 +1,8 @@
 &__center {
-  height: calc(100vh - #{$top_height});
+  height: calc(100vh - $top_height - $bottom_height);
   width: 100vw;
   @import "contents_center_memo";
   @import "contents_center_form";
   @import "contents_center_form_tag";
+  @import "contents_center_form_folder";
 }

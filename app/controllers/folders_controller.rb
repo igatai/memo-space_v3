@@ -22,7 +22,6 @@ class FoldersController < ApplicationController
   end
 
   def destroy
-    # binding.pry
     @folder = Folder.find(params[:id])
     @tags = Tag.where(folder_id: @folder.id)
     @default_folder = @user_folders.where(name: 'DefaultFolder')[0]

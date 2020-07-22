@@ -1,18 +1,18 @@
 &__form#tag {
-
   height: calc(100vh - 80px);
   color: white;
   margin: auto auto;
   font-size: 30px;
   h1 {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 10%;
     padding-bottom: 10px;
   }
   .new_tag {
     width: 80%;
     margin: 0 auto;
     &__field {
+      color: black;
       width: 80%;
       height: 80px;
       font-size: 30px;
@@ -24,6 +24,13 @@
       border-width: 1px;
       padding-left: 15px;
       margin: 20px 80px 20px 80px;
+    }
+
+    &__folder {
+      &__guide {
+      }
+      &__selection {
+      }
     }
     &__submit_btn {
       color: black;

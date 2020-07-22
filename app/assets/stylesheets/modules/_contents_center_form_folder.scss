@@ -5,12 +5,23 @@
   font-size: 30px;
   h1 {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 10%;
     padding-bottom: 10px;
   }
   .new_folder {
     width: 80%;
     margin: 0 auto;
+
+    form.new_folder#new_folder {
+      color: black;
+      margin: auto auto;
+    }
+
+    form.edit_folder {
+      color: black;
+      margin: auto auto;
+    }
+
     &__field {
       width: 80%;
       height: 80px;

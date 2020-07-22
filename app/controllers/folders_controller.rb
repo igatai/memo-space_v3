@@ -32,6 +32,15 @@ class FoldersController < ApplicationController
     redirect_to folders_path, notice: 'フォルダーを削除しました'
   end
 
+  def update
+    @folder = Folder.find(params[:id])
+    if @folder.update(folder_params)
+      redirect_to folders_path()
+    else
+      render :edit
+    end
+  end
+
   private
   def folder_params
     params.require(:folder).permit(:name).merge(user_id: current_user.id)

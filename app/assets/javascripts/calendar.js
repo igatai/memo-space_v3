@@ -30,12 +30,15 @@ $(document).ready(function() {
     }
     var data = {
       event: {
-        title: title,
-        content: content,
         start: start_time,
         end: end_time,
         allday: 0,
-        user_id: user_id
+        user_id: user_id,
+        memo_attributes: {
+          title: title,
+          text: content,
+          user_id: user_id
+        }
       }
     }
     $.ajax({
@@ -132,12 +135,12 @@ $(document).ready(function() {
       }
       var data = {
         event: {
-          title: event.title,
-          content: event.content,
           start: start_time,
           end: end_time,
           allday: 0,
-          user_id: user_id
+          user_id: user_id,
+          title: event.title,
+          text: event.text
         }
       }
       $.ajax({
@@ -179,12 +182,12 @@ $(document).ready(function() {
       }
       var data = {
         event: {
-          title: event.title,
-          content: event.content,
           start: start_time,
           end: end_time,
           allday: 0,
-          user_id: user_id
+          user_id: user_id,
+          title: event.title,
+          text: event.text,
         }
       }
       $.ajax({

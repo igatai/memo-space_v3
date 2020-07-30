@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'summaries/index'
   get 'wrappers/index'
   get 'wrappers/show'
   get 'events/index'
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :edit, :update]
   resources :memos, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :events, only:[:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :summaries, only:[:index]
   resources :folders,  only:[:index, :show, :new, :create, :edit, :update, :destroy]
   resources :tags,  only:[:index, :show, :new, :create, :edit, :update, :destroy] do
     collection do

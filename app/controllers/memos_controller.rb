@@ -1,5 +1,6 @@
 class MemosController < ApplicationController
   before_action :set_memo_content, only: [:show, :edit, :destroy]
+  before_action :set_memo_list, only: [:index]
 
   def index
     
@@ -41,6 +42,10 @@ class MemosController < ApplicationController
   end
 
   private
+
+  def set_memo_list
+    @memos = Memo.includes(:user).where(user_id: current_user.id).page(params[:page]).per(10) if current_user != nil
+  end
 
   def set_memo_content
     @memo = Memo.find(params[:id])

@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    @events = Event.where(user_id: current_user.id)
+    @events = Event.includes(:memos).where(user_id: current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -63,13 +63,12 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(
-      :title,
-      :content,
       :start,
       :end,
       :color,
       :allday,
-      :user_id
+      :user_id,
+      memo_attributes: [:title, :text, :imege, :_destroy, :id]
     )
   end
 end

@@ -30,12 +30,15 @@ $(document).ready(function() {
     }
     var data = {
       event: {
-        title: title,
-        content: content,
         start: start_time,
         end: end_time,
         allday: 0,
-        user_id: user_id
+        user_id: user_id,
+        memo_attributes: {
+          title: title,
+          text: content,
+          user_id: user_id
+        }
       }
     }
     $.ajax({
@@ -132,12 +135,13 @@ $(document).ready(function() {
       }
       var data = {
         event: {
-          title: event.title,
-          content: event.content,
           start: start_time,
           end: end_time,
           allday: 0,
-          user_id: user_id
+          user_id: user_id,
+          memo_attributes: {
+            user_id: user_id
+          }
         }
       }
       $.ajax({
@@ -151,6 +155,7 @@ $(document).ready(function() {
       calendar.fullCalendar('unselect');
     },
     eventDrop: function(event) { //イベントをドラッグ&ドロップした際に実行
+      console.log(event);
       var id = event.id
       var update_url = "/api/v1/events/"+id
       var event_start_time = event.start._d
@@ -179,8 +184,6 @@ $(document).ready(function() {
       }
       var data = {
         event: {
-          title: event.title,
-          content: event.content,
           start: start_time,
           end: end_time,
           allday: 0,

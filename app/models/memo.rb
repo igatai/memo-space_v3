@@ -3,6 +3,7 @@ class Memo < ApplicationRecord
   has_many :tag_memos
   has_many :tags, through: :tag_memos, dependent: :destroy
   belongs_to :user
+  belongs_to :event
 
   mount_uploader :image, ImageUploader
 

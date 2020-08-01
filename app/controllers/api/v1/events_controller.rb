@@ -20,15 +20,11 @@ module Api
 
       def edit
         @event = Event.find(params[:id])
+        @memo = Memo.where(event_id: @event.id)
       end
 
       def update
         @event = Event.find(params[:id])
-        event_params.require(:title)
-        event_params.require(:content)
-        event_params.require(:start)
-        event_params.require(:end)
-        event_params.require(:user_id)
         respond_to do |format|
           format.any
           if @event.update!(event_params)
@@ -42,20 +38,15 @@ module Api
 
       def new
         @event = Event.new
+        @event.build_memo
       end
 
       def create
-        event_params.require(:title)
-        event_params.require(:content)
-        event_params.require(:start)
-        event_params.require(:end)
-        event_params.require(:user_id)
-        # event_params.require(:color)
-        # event_params.require(:allday)
         @event = Event.new(event_params)
+        @memo = @event.memo
         respond_to do |format|
           format.any
-          if @event.save!
+          if @event.save! && @memo.save!
             render json: @event
           else
             render json: {status: "ng", code: 500, content: {message: "エラーだよ"}}
@@ -71,15 +62,13 @@ module Api
 
       private
         def event_params
-          params[:event]
-          .permit(
-            :title,
-            :content,
+          params.require(:event).permit(
             :start,
             :end,
             :color,
             :allday,
-            :user_id
+            :user_id,
+            memo_attributes: [:id, :_destroy, :title, :text, :user_id]
           )
         end
     end

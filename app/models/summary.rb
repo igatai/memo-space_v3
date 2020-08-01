@@ -1,0 +1,3 @@
+class Summary < ApplicationRecord
+  
+end

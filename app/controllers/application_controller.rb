@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   before_action :set_user
-  # before_action :set_memo_list
   before_action :set_users_tag_list
   before_action :set_users_folder_list
 
@@ -17,19 +16,6 @@ class ApplicationController < ActionController::Base
     @user = User.find(current_user&.id) if current_user != nil
     cookies[:user_id] = current_user&.id if current_user != nil
   end
-
-  # def set_memo_list
-  #   @memos = Memo.includes(:user).where(user_id: current_user.id).page(params[:page]).per(10) if current_user != nil
-  # end
-
-  # def set_event_list
-  #   @events = @user&.events
-  # end
-
-  # def set_summary_list
-  #   @summary = Array.new
-  #   @summary = (@memos + @events).sort! { |obj| obj.updated_at }.reverse
-  # end
 
   def set_users_tag_list
     @user_tags = @user&.tags

@@ -139,8 +139,9 @@ $(document).ready(function() {
           end: end_time,
           allday: 0,
           user_id: user_id,
-          title: event.title,
-          text: event.text
+          memo_attributes: {
+            user_id: user_id
+          }
         }
       }
       $.ajax({
@@ -154,6 +155,7 @@ $(document).ready(function() {
       calendar.fullCalendar('unselect');
     },
     eventDrop: function(event) { //イベントをドラッグ&ドロップした際に実行
+      console.log(event);
       var id = event.id
       var update_url = "/api/v1/events/"+id
       var event_start_time = event.start._d
@@ -185,9 +187,7 @@ $(document).ready(function() {
           start: start_time,
           end: end_time,
           allday: 0,
-          user_id: user_id,
-          title: event.title,
-          text: event.text,
+          user_id: user_id
         }
       }
       $.ajax({

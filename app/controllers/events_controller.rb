@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @events = Event.includes(:memos).where(user_id: current_user.id)
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml { render xml: @events }
       format.json { render :json => @events }
     end

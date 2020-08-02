@@ -1,6 +1,6 @@
 class MemosController < ApplicationController
   before_action :set_memo_content, only: [:show, :edit, :destroy]
-  before_action :set_memo_list, only: [:index]
+  before_action :set_memo_list, only: [:index, :create, :update, :destroy]
 
   def index
     
@@ -44,7 +44,8 @@ class MemosController < ApplicationController
   private
 
   def set_memo_list
-    @memos = Memo.includes(:user).where(user_id: current_user.id).page(params[:page]).per(10) if current_user != nil
+    # binding.pry
+    @memos = Memo.includes(:user).where(user_id: current_user.id).order(updated_at: :desc).page(params[:page]).per(10) if current_user != nil
   end
 
   def set_memo_content
@@ -53,6 +54,6 @@ class MemosController < ApplicationController
   end
   def memo_params
     # tag_ids: [] ... model_name + __ids + 配列表記[] -> 中間テーブルに保存
-    params.require(:memo).permit(:title, :text, :image, tag_ids: []).merge(user_id: current_user.id)
+    params.require(:memo).permit(:title, :text, :image, tag_ids: [] ).merge(user_id: current_user.id)
   end
 end

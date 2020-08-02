@@ -1,6 +1,6 @@
 &__right {
   width: #{$right_width};
-  height: calc(100vh - 80px - $bottom_height);
+  height: calc(100vh - 80px);
   box-sizing: border-box;
   padding-top: 120px;
   padding-right: 40px;
@@ -35,7 +35,6 @@
           padding: 5px 0 0 10px;
           background-color: white;
           text-align: center;
-          // line-height: 30px;
           display: flex;
           color:darkblue;
           &__checkbox {

@@ -1,6 +1,5 @@
 $right_width: 370px;
 $top_height: 80px;
-$bottom_height: 30px;
 
 &__contents {
   @import "mixin/mixin";
@@ -15,6 +14,6 @@ $bottom_height: 30px;
   overflow-x: hidden;
 
   width: 100%;
-  height: calc(100vh - $top_height - $bottom_height);
+  height: calc(100vh - $top_height);
   display: flex;
 }

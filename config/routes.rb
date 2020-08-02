@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   root "memos#index"
   resources :users, only: [:new, :edit, :update]
-  resources :memos, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :memos, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :events, only:[:index, :show, :new, :create, :edit, :update, :destroy]
   resources :summaries, only:[:index]
   resources :folders,  only:[:index, :show, :new, :create, :edit, :update, :destroy]

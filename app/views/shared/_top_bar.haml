@@ -2,17 +2,14 @@
   %i.fas.fa-republican
     MemoSpace
 
-  -# %div#wrapper.wrapper__top_bar__menu
 .wrapper.wrapper__top_bar__menu
   %div#wrapper
-    -# %p.wrapper__top_bar__menu__btn-gnavi
     %p.btn-gnavi
       %span
       %span
       %span
 
     %nav#global-navi
-      -# %ul.wrapper__top_bar__menu__txt-gnavi
       %ul.menu
         %li
           = link_to new_memo_path, class: "menu__new_file" do
@@ -41,40 +38,3 @@
 .wrapper__top_bar__user
   %i.far.fa-user
     #{@user.name}
-
-    -# %div#wrapper
-    -#   %p.btn-gnavi
-    -#     %span
-    -#     %span
-    -#     %span
-    -#   %nav#global-navi
-    -#     %ul.menu
-    -#       %li
-    -#         %a{href: ""} トップ
-    -#       %li
-    -#         %a{href: ""} 概要
-    -#       %li
-    -#         %a{href: ""} 特集
-    -#       %li
-    -#         %a{href: ""} アクセス
-    -#       %li
-    -#         %a{href: ""} お問い合わせ
-
-
-    -# %div#wrapper
-    -#   %p.btn-gnavi
-    -#     %span
-    -#     %span
-    -#     %span
-    -#   %nav#global-navi
-    -#     %ul.menu
-    -#       %li
-    -#         %a{href: ""} トップ
-    -#       %li
-    -#         %a{href: ""} 概要
-    -#       %li
-    -#         %a{href: ""} 特集
-    -#       %li
-    -#         %a{href: ""} アクセス
-    -#       %li
-    -#         %a{href: ""} お問い合わせ

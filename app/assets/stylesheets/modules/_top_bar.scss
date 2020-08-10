@@ -3,8 +3,9 @@
   height: 80px;
   background-color: black;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   text-decoration: none;
   @import "top_bar_title";
-  @import "top_bar_btn";
+  @import "top_bar_menu";
+  @import "top_bar_user";
 }

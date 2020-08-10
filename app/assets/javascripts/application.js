@@ -18,6 +18,7 @@
 //= require turbolinks
 //= require_tree .
 
+// For fullcalendar
 $(function () {
   // 画面遷移を検知
   $(document).on('turbolinks:load', function () {
@@ -36,3 +37,42 @@ $(function () {
     }
   });
 });
+
+$(function(){
+  $(".btn-gnavi").on("click", function(){
+  // $(".wrapper__top_bar__menu__btn-gnavi").on("click", function(){
+      // ハンバーガーメニューの位置を設定
+    var rightVal = 0;
+    if($(this).hasClass("open")) {
+      // 位置を移動させメニューを開いた状態にする
+      rightVal = -300;
+      // メニューを開いたら次回クリック時は閉じた状態になるよう設定
+      $(this).removeClass("open");
+    } else {
+      // メニューを開いたら次回クリック時は閉じた状態になるよう設定
+      $(this).addClass("open");
+    }
+    $("#global-navi").stop().animate({
+      right: rightVal
+    }, 200);
+  });
+});
+
+
+// (function($) {
+//   $(function () {
+//     $('.wrapper__demo__sub-menu').on({
+//       'mouseenter': function () {
+//         $(this).addClass('is-active');
+//       },
+//       'mouseleave': function () {
+//         $(this).removeClass('is-active');
+//       }
+//     });
+//     $('#nav-toggle,#overlay').on('click', function() {
+//       $('body').toggleClass('open');
+//       console.log("test");
+//       // $('wrapper__demo').toggleClass('open');
+//     });
+//   });
+// })(jQuery);

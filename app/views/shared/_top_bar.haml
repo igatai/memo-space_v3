@@ -1,18 +1,80 @@
-.wrapper__top_bar
-  = link_to root_path, class: "wrapper__top_bar__title", :method => :get do
-    %i.fas.fa-republican
-      MemoSpace
-  .wrapper__top_bar__btn
-    = link_to new_memo_path, class: "wrapper__top_bar__btn__new_file" do
-      %p#new_file.fas.fa-plus-circle
-      %i#new_file.far.fa-file-alt
-    = link_to new_tag_path, class: "wrapper__top_bar__btn__new_tag" do
-      %p#new_tag.fas.fa-plus-circle
-      %i#new_tag.fas.fa-tags
-    = link_to new_folder_path, class: "wrapper__top_bar__btn__new_folder" do
-      %p#new_folder.fas.fa-plus-circle
-      %i#new_folder.far.fa-folder
-    %i.far.fa-user
-      #{@user.name}
-    =link_to destroy_user_session_path, class: "wrapper__top_bar__btn__logout", :method => :delete do
-      %i.fas.fa-.fa-sign-out-alt
+= link_to root_path, class: "wrapper__top_bar__title", :method => :get do
+  %i.fas.fa-republican
+    MemoSpace
+
+  -# %div#wrapper.wrapper__top_bar__menu
+.wrapper.wrapper__top_bar__menu
+  %div#wrapper
+    -# %p.wrapper__top_bar__menu__btn-gnavi
+    %p.btn-gnavi
+      %span
+      %span
+      %span
+
+    %nav#global-navi
+      -# %ul.wrapper__top_bar__menu__txt-gnavi
+      %ul.menu
+        %li
+          = link_to new_memo_path, class: "menu__new_file" do
+            .menu__new_file__icon#icon
+              %p#new_file.fas.fa-plus-circle
+              %i#new_file.far.fa-file-alt
+            %p.menu__new_file__guide#guide NewMemo
+        %li
+          = link_to new_tag_path, class: "menu__new_tag" do
+            .menu__new_tag__icon#icon
+              %p#new_tag.fas.fa-plus-circle
+              %i#new_tag.fas.fa-tags
+            %p.menu__new_tag__guide#guide NewTag
+        %li
+          = link_to new_folder_path, class: "menu__new_folder" do
+            .menu__new_folder__icon#icon
+              %p#new_folder.fas.fa-plus-circle
+              %i#new_folder.far.fa-folder
+            %p.menu__new_folder__guide#guide NewFolder
+        %li
+          =link_to destroy_user_session_path, class: "menu__logout", :method => :delete do
+            .menu__logout__icon#icon
+              %i.fas.fa-.fa-sign-out-alt
+            %p.menu__logout__guide#guide Logout
+
+.wrapper__top_bar__user
+  %i.far.fa-user
+    #{@user.name}
+
+    -# %div#wrapper
+    -#   %p.btn-gnavi
+    -#     %span
+    -#     %span
+    -#     %span
+    -#   %nav#global-navi
+    -#     %ul.menu
+    -#       %li
+    -#         %a{href: ""} トップ
+    -#       %li
+    -#         %a{href: ""} 概要
+    -#       %li
+    -#         %a{href: ""} 特集
+    -#       %li
+    -#         %a{href: ""} アクセス
+    -#       %li
+    -#         %a{href: ""} お問い合わせ
+
+
+    -# %div#wrapper
+    -#   %p.btn-gnavi
+    -#     %span
+    -#     %span
+    -#     %span
+    -#   %nav#global-navi
+    -#     %ul.menu
+    -#       %li
+    -#         %a{href: ""} トップ
+    -#       %li
+    -#         %a{href: ""} 概要
+    -#       %li
+    -#         %a{href: ""} 特集
+    -#       %li
+    -#         %a{href: ""} アクセス
+    -#       %li
+    -#         %a{href: ""} お問い合わせ

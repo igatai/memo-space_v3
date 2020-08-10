@@ -12,6 +12,14 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
 
+
+    -# For responsive
+    %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", name: "viewport"}
+    -# For hunberger menu
+    %script{integrity: "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", crossorigin: "anonymous"}
+    -# %script{src: "http://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"}
+    -# %script{type: "text/javascript"}
+
   %body
     = render 'layouts/notifications'
     = yield

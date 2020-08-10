@@ -1,0 +1,23 @@
+&__user {
+  line-height: 80px;
+  padding-top: 20px;
+  padding-right: 50px;
+  color: white;
+  font-size: 20px;
+  i.far.fa-user {
+  }
+  &__user {
+    margin-left: 5px;
+  }
+}
+@media (max-width: 1150px) {
+  &__user {
+    line-height: 80px;
+    // padding-top: 5%;
+    color: white;
+    font-size: 20px;
+    &__user {
+      margin-left: 5px;
+    }
+  }
+}

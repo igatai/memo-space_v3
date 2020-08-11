@@ -118,13 +118,68 @@
   }
   #wrapper nav ul li {
     display:block;
-    padding: 20px 28px
+    padding: 10px 20px;
   }
 
   #wrapper nav ul li a {
     text-decoration: none;
-    color: #ddd
+    color: #ddd;
   }
+
+  ul {
+    li {
+      a.menu__new_file {
+        .menu__new_file__icon {
+          p#new_file.fas.fa-plus-circle {
+            font-size: 13px;
+          }
+          i#new_file.far.fa-file-alt {
+            font-size: 20px;
+          }
+        }
+        .menu__new_file__guide {
+          font-size: 20px;
+        }
+      }
+      a.menu__new_tag {
+        .menu__new_tag__icon {
+          p#new_tag.fas.fa-plus-circle {
+            font-size: 13px;
+          }
+          i#new_tag.fas.fa-tags {
+            font-size: 20px;
+          }
+        }
+        .menu__new_tag__guide {
+          font-size: 20px;
+        }
+      }
+      a.menu__new_folder {
+        .menu__new_folder__icon {
+          p#new_folder.fas.fa-plus-circle {
+            font-size: 13px;
+          }
+          i#new_folder.far.fa-folder {
+            font-size: 20px;
+          }
+        }
+        .menu__new_folder__guide {
+          font-size: 20px;
+        }
+      }
+      a.menu__logout {
+        .menu__logout__icon {
+          i.fas.fa-.fa-sign-out-alt {
+            font-size: 20px;
+          }
+        }
+        .menu__logout__guide {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
   #wrapper .btn-gnavi {
     position: fixed;
     top: 20px;

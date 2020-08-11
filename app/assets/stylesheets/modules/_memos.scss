@@ -1,7 +1,9 @@
 * {
   box-sizing: border-box;
 }
-$top_height: 80px;
+$top_height: 60px;
+$right_width: 370px;
+
 .wrapper {
   @import "top_bar";
   @import "contents";

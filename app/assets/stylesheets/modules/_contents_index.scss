@@ -1,7 +1,8 @@
 &__index {
   // width: calc(100vw - $right_width - 20px - 260px);
-  width: 82%;
-  height: calc(100vh - 80px);
+  width: calc(100vw - $right_width);
+  // width: 82%;
+  height: calc(100vh - $top_height);
   box-sizing: border-box;
   margin: 0 auto;
   position: relative;

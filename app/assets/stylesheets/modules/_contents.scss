@@ -1,6 +1,3 @@
-$right_width: 370px;
-$top_height: 80px;
-
 &__contents {
   @import "mixin/mixin";
   @import "contents_center";
@@ -13,7 +10,7 @@ $top_height: 80px;
   overflow-y: scroll;
   overflow-x: hidden;
 
-  width: 100%;
+  width: 100vw;
   height: calc(100vh - $top_height);
   display: flex;
 }

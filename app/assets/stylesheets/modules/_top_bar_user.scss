@@ -1,5 +1,5 @@
 &__user {
-  line-height: 80px;
+  line-height: $top_height;
   padding-top: 20px;
   padding-right: 50px;
   color: white;
@@ -12,7 +12,7 @@
 }
 @media (max-width: 1150px) {
   &__user {
-    line-height: 80px;
+    line-height: $top_height;
     // padding-top: 5%;
     color: white;
     font-size: 20px;

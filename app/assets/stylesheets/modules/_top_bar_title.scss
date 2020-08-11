@@ -1,8 +1,8 @@
 &__title {
   width: 400px;
-  height: 80px;
+  height: $top_height;
   font-size: 50px;
-  line-height: 80px;
+  line-height: $top_height;
   padding-top: 10px;
 
   i.fas.fa-republican {
@@ -17,12 +17,11 @@
   &__title {
     width: 300px;
     font-size: 30px;
-    line-height: 80px;
-    // padding-top: 5%;
+    line-height: $top_height;
   
     i.fas.fa-republican {
       font-size: 30px;
-      line-height: 80px;
+      line-height: $top_height;
       text-decoration: none;
       color: white;
     }

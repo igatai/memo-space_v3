@@ -1,9 +1,8 @@
 * {
   box-sizing: border-box;
 }
-$top_height: 80px;
+$top_height: 60px;
 .wrapper {
   @import "top_bar";
   @import "contents";
-  // @import "demo2";
 }

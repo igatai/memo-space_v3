@@ -40,7 +40,6 @@ $(function () {
 
 $(function(){
   $(".btn-gnavi").on("click", function(){
-  // $(".wrapper__top_bar__menu__btn-gnavi").on("click", function(){
       // ハンバーガーメニューの位置を設定
     var rightVal = 0;
     if($(this).hasClass("open")) {
@@ -57,22 +56,3 @@ $(function(){
     }, 200);
   });
 });
-
-
-// (function($) {
-//   $(function () {
-//     $('.wrapper__demo__sub-menu').on({
-//       'mouseenter': function () {
-//         $(this).addClass('is-active');
-//       },
-//       'mouseleave': function () {
-//         $(this).removeClass('is-active');
-//       }
-//     });
-//     $('#nav-toggle,#overlay').on('click', function() {
-//       $('body').toggleClass('open');
-//       console.log("test");
-//       // $('wrapper__demo').toggleClass('open');
-//     });
-//   });
-// })(jQuery);

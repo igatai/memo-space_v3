@@ -1,20 +1,18 @@
 &__user {
-  line-height: $top_height;
-  padding-top: 20px;
-  padding-right: 50px;
+  margin-right: 40px;
   color: white;
   font-size: 20px;
+  width: 40%;
   i.far.fa-user {
+    margin-top: 30px;
   }
   &__user {
-    margin-left: 5px;
   }
 }
 @media (max-width: 1150px) {
   &__user {
-    line-height: $top_height;
     color: white;
-    font-size: 20px;
+    font-size: 15px;
     &__user {
       margin-left: 5px;
     }

@@ -36,3 +36,15 @@
   bottom: 0;
   padding: 5px 0 5px 50px;
 }
+
+@mixin screen-pc {
+  @media (min-width: $pc-min){
+    @content;
+  }
+}
+
+@mixin screen-mobile {
+  @media (max-width: $pc-min){
+    @content;
+  }
+}

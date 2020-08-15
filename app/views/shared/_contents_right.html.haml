@@ -1,6 +1,6 @@
 %ul.wrapper__contents__right__ul
   .wrapper__contents__right__ul__title
-    = "タグリスト"
+    = "Tag list"
   = form_with(url: search_tags_path, local: true, method: :get, class: "wrapper__contents__right__ul__search-form") do |form|
     - @user_folders.each do |user_folder|
       .wrapper__contents__right__ul__search-form__folder
@@ -16,5 +16,5 @@
     = form.submit '検索', class: "wrapper__contents__right__ul__search-form__submit"
   .wrapper__contents__right__ul__bottom
     %br.wrapper__contents__right__ul__bottom__guide
-    = "※AND条件で絞り込み検索します。"
+    = "※It will search with And condition"
     = link_to icon('fas',' fa-edit'), folders_path(@user_folder), class: "wrapper__contents__right__ul__bottom__edit", method: :get

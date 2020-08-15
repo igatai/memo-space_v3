@@ -1,112 +1,224 @@
 $top_height: 50px;
 
-&__index {
-  width: calc(100vw - 10%);
-  height: calc(100vh - $top_height);
-  box-sizing: border-box;
-  margin: 0 auto;
-  position: relative;
-
-  &__head {
-    color: white;
-    height: 50px;
-    width: calc(100vw - 10%);
-
-    &__sub_title {
-      font-size: 20px;
-      padding-top: 20px;
-      text-align: center;
-    }
-    .fas.fa-.fa-plus-circle {
-      height: 30px;
-      width: calc(100vw - 200px);
-      font-size: 20px;
-      text-decoration: none;
-      text-align: center;
+@include mq(sm){
+  &__index {
+    width: calc(100vw - 2%);
+    height: calc(100vh - $top_height);
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+  
+    &__head {
       color: white;
-      margin: auto;
-    }
-  }
-
-  &__ul {
-    margin: auto auto;
-    display: inline-block;
-    width: 90%;
-    height: 100%;
-
-    position: absolute;
-    top: 10%;
-    left: 5%;
-
-    &__list {
-      @include list;
-      &__title {
-        @include list_title;
+      height: 50px;
+      width: calc(100vw - 10%);
+  
+      &__sub_title {
+        font-size: 20px;
+        padding-top: 20px;
+        text-align: center;
       }
-      &__content {
-        @include list_content;
-        &__image {
-        }
-        &__text {
-          @include list_content_text;
-        }
-      }
-      &__date {
-        @include list_data;
+      .fas.fa-.fa-plus-circle {
+        height: 30px;
+        width: calc(100vw - 200px);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        margin: auto;
       }
     }
+  
+    &__ul {
+      width: 100%;
+      display: inline-block;
+      height: 100%;
+  
+      &__list {
+        @include list-sm;
+        &__title {
+          @include list_title-sm;
+        }
+        &__content {
+          @include list_content-sm;
+          &__image {
+          }
+          &__text {
+            @include list_content_text-sm;
+          }
+        }
+        &__date {
+          @include list_data-sm;
+        }
+      }
+    }
+    a {
+      border: none;
+      background-color: black;
+    }
   }
-  a {
-    border: none;
-    background-color: black;
+  
+  .wrapper__contents__index__pagination {
+    position: fixed;
+    bottom: 10px;
+    left: 40%;
+    ul.pagination {
+      li.page.active {
+        a {
+          border: none;
+          background-color: rgba(10, 10, 10, 10.7);
+          background-color: black;
+        }
+      }
+      li.page {
+        a {
+          border: none;
+          background-color: rgba(73, 72, 72, 0.7);
+          color: white;
+        }
+      }
+      li.first {
+        a {
+          border: none;
+          background-color: rgba(73, 72, 72, 0.7);
+          color: white;
+        }
+      }
+      li.prev {
+        a {
+          border: none;
+          background-color: rgba(73, 72, 72, 0.7);
+          color: white;
+        }
+      }
+      li.next {
+        a {
+          border: none;
+          background-color: rgba(73, 72, 72, 0.7);
+          color: white;
+        }
+      }
+      li.last {
+        a {
+          border: none;
+          background-color: rgba(73, 72, 72, 0.7);
+          color: white;
+        }
+      }
+    }
   }
 }
 
-.wrapper__contents__index__pagination {
-  position: fixed;
-  bottom: 10px;
-  left: 40%;
-  ul.pagination {
-    li.page.active {
-      a {
-        border: none;
-        background-color: rgba(10, 10, 10, 10.7);
-        background-color: black;
+
+@include mq(xl){
+  &__index {
+    width: calc(100vw - 2%);
+    height: calc(100vh - $top_height);
+    box-sizing: border-box;
+    margin: 0 auto;
+    position: relative;
+  
+    &__head {
+      color: white;
+      height: 50px;
+      width: calc(100vw - 10%);
+  
+      &__sub_title {
+        font-size: 20px;
+        padding-top: 20px;
+        text-align: center;
+      }
+      .fas.fa-.fa-plus-circle {
+        height: 30px;
+        width: calc(100vw - 200px);
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        margin: auto;
       }
     }
-    li.page {
-      a {
-        border: none;
-        background-color: rgba(73, 72, 72, 0.7);
-        color: white;
+  
+    &__ul {
+      margin: auto auto;
+      display: inline-block;
+      width: 90%;
+      height: 100%;
+  
+      position: absolute;
+      top: 10%;
+      left: 5%;
+  
+      &__list {
+        @include list-xl;
+        &__title {
+          @include list_title-xl;
+        }
+        &__content {
+          @include list_content-xl;
+          &__image {
+          }
+          &__text {
+            @include list_content_text-xl;
+          }
+        }
+        &__date {
+          @include list_data-xl;
+        }
       }
     }
-    li.first {
-      a {
-        border: none;
-        background-color: rgba(73, 72, 72, 0.7);
-        color: white;
-      }
+    a {
+      border: none;
+      background-color: black;
     }
-    li.prev {
-      a {
-        border: none;
-        background-color: rgba(73, 72, 72, 0.7);
-        color: white;
+  }
+  
+  .wrapper__contents__index__pagination {
+    position: fixed;
+    bottom: 10px;
+    left: 40%;
+    ul.pagination {
+      li.page.active {
+        a {
+          border: none;
+          background-color: rgba(10, 10, 10, 10.7);
+          background-color: black;
+        }
       }
-    }
-    li.next {
-      a {
-        border: none;
-        background-color: rgba(73, 72, 72, 0.7);
-        color: white;
+      li.page {
+        a {
+          border: none;
+          background-color: rgba(73, 72, 72, 0.7);
+          color: white;
+        }
       }
-    }
-    li.last {
-      a {
-        border: none;
-        background-color: rgba(73, 72, 72, 0.7);
-        color: white;
+      li.first {
+        a {
+          border: none;
+          background-color: rgba(73, 72, 72, 0.7);
+          color: white;
+        }
+      }
+      li.prev {
+        a {
+          border: none;
+          background-color: rgba(73, 72, 72, 0.7);
+          color: white;
+        }
+      }
+      li.next {
+        a {
+          border: none;
+          background-color: rgba(73, 72, 72, 0.7);
+          color: white;
+        }
+      }
+      li.last {
+        a {
+          border: none;
+          background-color: rgba(73, 72, 72, 0.7);
+          color: white;
+        }
       }
     }
   }

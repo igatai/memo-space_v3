@@ -1,51 +1,114 @@
-&__form#tag {
-  height: calc(100vh - 80px);
-  color: white;
-  margin: auto auto;
-  font-size: 30px;
-  h1 {
-    text-align: center;
-    padding-top: 10%;
-    padding-bottom: 10px;
-  }
-  .new_tag {
-    width: 80%;
-    margin: 0 auto;
-    &__field {
-      color: black;
-      width: 80%;
-      height: 80px;
-      font-size: 30px;
-      border-radius: 10px;
-      border-top-color: gray;
-      border-right-color: gray;
-      border-left-color: white;
-      border-bottom-color: white;
-      border-width: 1px;
-      padding-left: 15px;
-      margin: 20px 80px 20px 80px;
-    }
+@include mq(sm) {
+  &__form#tag {
+    height: calc(100vh - $top_height);
+    color: white;
+    margin: auto auto;
+    font-size: 20px;
+    width: 90%;
+    h1 {
+      width: 90%;
+      padding-top: 10%;
+      margin-bottom: 20px;
 
-    &__folder {
-      &__guide {
+    }
+    .new_tag {
+      width: 100%;
+      margin: 0 auto;
+      &__field {
+        color: black;
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 10px;
+        border-top-color: gray;
+        border-right-color: gray;
+        border-left-color: white;
+        border-bottom-color: white;
+        border-width: 1px;
+        padding-left: 15px;
       }
-      &__selection {
+      &__folder {
+        margin: 20px auto;
+        &__guide {
+        }
+        &__selection {
+          width: 100%;
+          padding: 10px 20px 10px 20px;
+          margin: auto auto;
+          background-color: rgba(64,64,64,0.7);
+          border-radius: 5px;
+        }
+      }
+      &__submit_btn {
+        color: black;
+        width: 90%;
+        height: 40px;
+        border-radius: 5px;
+        border-top: none;
+        border-width: 2px;
+        border-top: none;
+        border-right: none;
+        border-left-color: gray;
+        border-bottom-color: gray;
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        font-size: 20px;
       }
     }
-    &__submit_btn {
-      color: black;
-      width: 35%;
-      height: 40px;
-      border-radius: 5px;
-      border-top: none;
-      border-width: 2px;
-      border-top: none;
-      border-right: none;
-      border-left-color: gray;
-      border-bottom-color: gray;
-      display: block;
+  }
+}
+
+@include mq(xl) {
+  &__form#tag {
+    height: calc(100vh - 80px);
+    color: white;
+    margin: auto auto;
+    font-size: 30px;
+    h1 {
+      text-align: center;
+      padding-top: 10%;
+      padding-bottom: 10px;
+    }
+    .new_tag {
+      width: 80%;
       margin: 0 auto;
-      font-size: 20px;
+      &__field {
+        color: black;
+        width: 80%;
+        height: 80px;
+        font-size: 30px;
+        border-radius: 10px;
+        border-top-color: gray;
+        border-right-color: gray;
+        border-left-color: white;
+        border-bottom-color: white;
+        border-width: 1px;
+        padding-left: 15px;
+        margin: 20px 80px 20px 80px;
+      }
+
+      &__folder {
+        &__guide {
+        }
+        &__selection {
+        }
+      }
+      &__submit_btn {
+        color: black;
+        width: 35%;
+        height: 40px;
+        border-radius: 5px;
+        border-top: none;
+        border-width: 2px;
+        border-top: none;
+        border-right: none;
+        border-left-color: gray;
+        border-bottom-color: gray;
+        display: block;
+        margin: 0 auto;
+        font-size: 20px;
+      }
     }
   }
 }

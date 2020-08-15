@@ -1,5 +1,5 @@
 &__title {
-  width: 400px;
+  width: 20%;
   height: $top_height;
   font-size: 30px;
   line-height: $top_height;
@@ -12,11 +12,11 @@
   }
 }
 
-/*スマホ画面で例１のハンバーガーメニューの形にする*/
+/*スマホ画面でハンバーガーメニューの形にする*/
 @media (max-width: 1150px) {
   &__title {
-    width: 300px;
-    font-size: 20px;
+    width: 50%;
+    font-size: 18px;
     line-height: $top_height;
   
     i.fas.fa-republican {

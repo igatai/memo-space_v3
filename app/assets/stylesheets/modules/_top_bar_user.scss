@@ -1,8 +1,8 @@
 &__user {
-  margin-right: 40px;
+  margin-right: 2%;
   color: white;
   font-size: 20px;
-  width: 40%;
+  width: 10%;
   i.far.fa-user {
     margin-top: 30px;
   }
@@ -13,8 +13,12 @@
   &__user {
     color: white;
     font-size: 15px;
-    &__user {
+    width: 40%;
+    i.far.fa-user {
       margin-left: 5px;
+    }
+    &__user {
+      margin-right: 20px;
     }
   }
 }

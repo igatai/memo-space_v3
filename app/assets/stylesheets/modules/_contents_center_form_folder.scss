@@ -1,54 +1,114 @@
-&__form#folder {
-  height: calc(100vh - 80px);
-  color: white;
-  margin: auto auto;
-  font-size: 30px;
-  h1 {
-    text-align: center;
-    padding-top: 10%;
-    padding-bottom: 10px;
-  }
-  .new_folder {
-    width: 80%;
-    margin: 0 auto;
-
-    form.new_folder#new_folder {
-      color: black;
-      margin: auto auto;
+@include mq(sm) {
+  &__form#folder {
+    height: calc(100vh - $top_height);
+    color: white;
+    margin: auto auto;
+    font-size: 20px;
+    h1 {
+      text-align: center;
+      padding-top: 10%;
+      padding-bottom: 10px;
     }
-
-    form.edit_folder {
-      color: black;
-      margin: auto auto;
-    }
-
-    &__field {
-      width: 80%;
-      height: 80px;
-      font-size: 30px;
-      border-radius: 10px;
-      border-top-color: gray;
-      border-right-color: gray;
-      border-left-color: white;
-      border-bottom-color: white;
-      border-width: 1px;
-      padding-left: 15px;
-      margin: 20px 80px 20px 80px;
-    }
-    &__submit_btn {
-      width: 35%;
-      height: 40px;
-      border-radius: 5px;
-      border-top: none;
-      border-width: 2px;
-      border-top: none;
-      border-right: none;
-      border-left-color: gray;
-      border-bottom-color: gray;
-      display: block;
+    .new_folder {
+      width: 90%;
       margin: 0 auto;
-      font-size: 20px;
-      color: black;
+
+      form.new_folder#new_folder {
+        color: black;
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      form.edit_folder {
+        color: black;
+        margin: 0 auto;
+        width: 90%;
+      }
+
+      &__field {
+        width: 90%;
+        height: 40px;
+        font-size: 20px;
+        border-radius: 10px;
+        border-top-color: gray;
+        border-right-color: gray;
+        border-left-color: white;
+        border-bottom-color: white;
+        border-width: 1px;
+        padding-left: 15px;
+      }
+      &__submit_btn {
+        width: 90%;
+        height: 40px;
+        border-radius: 5px;
+        border-top: none;
+        border-width: 2px;
+        border-top: none;
+        border-right: none;
+        border-left-color: gray;
+        border-bottom-color: gray;
+        display: block;
+        margin-top: 30px;
+        font-size: 20px;
+        color: black;
+      }
+    }
+  }
+}
+
+@include mq(xl) {
+  &__form#folder {
+    height: calc(100vh - 80px);
+    color: white;
+    margin: auto auto;
+    font-size: 30px;
+    h1 {
+      text-align: center;
+      padding-top: 10%;
+      padding-bottom: 10px;
+    }
+    .new_folder {
+      width: 80%;
+      margin: 0 auto;
+
+      form.new_folder#new_folder {
+        color: black;
+        margin: auto auto;
+      }
+
+      form.edit_folder {
+        color: black;
+        margin: auto auto;
+      }
+
+      &__field {
+        width: 80%;
+        height: 80px;
+        font-size: 30px;
+        border-radius: 10px;
+        border-top-color: gray;
+        border-right-color: gray;
+        border-left-color: white;
+        border-bottom-color: white;
+        border-width: 1px;
+        padding-left: 15px;
+        margin: 20px 80px 20px 80px;
+      }
+      &__submit_btn {
+        width: 35%;
+        height: 40px;
+        border-radius: 5px;
+        border-top: none;
+        border-width: 2px;
+        border-top: none;
+        border-right: none;
+        border-left-color: gray;
+        border-bottom-color: gray;
+        display: block;
+        margin: 0 auto;
+        font-size: 20px;
+        color: black;
+      }
     }
   }
 }

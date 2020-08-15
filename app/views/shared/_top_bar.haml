@@ -46,7 +46,7 @@
                         -# form.check_box :配列名, { 複数のチェックボックスをひとまとめに扱うか, uncheck時に0の自動取得を回避, class:"クラス名" }, "チェック時に取得する値"
                         %i.fas.fa-tags.menu__tag_search__ul__search-form__folder__list__icon
                         = form.label tag.name, class:"menu__tag_search__ul__search-form__folder__list__name"
-                = form.submit '検索', class: "menu__tag_search__ul__search-form__submit"
+                = form.submit 'Search', class: "menu__tag_search__ul__search-form__submit"
         %li
           = link_to folders_path(@user_folder), class: "menu__edit_tag_list", method: :get do
             .menu__edit_tag_list__icon#icon

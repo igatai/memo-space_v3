@@ -7,7 +7,7 @@
   = image_tag @memo.image.url, class: 'image', size: '300x300' if @memo.image.present?
 .wrapper__contents__center__memo__bottom
   .wrapper__contents__center__memo__bottom__date
-    = simple_format(@memo.updated_at.strftime("%Y年%m月%d日 %H時%M分"))
+    = simple_format(@memo.updated_at.strftime("%Y/%m/%d/ %H:%M"))
   .wrapper__contents__center__memo__bottom__tags
     - @tags.each do |tag|
       %i.fas.fa-tags

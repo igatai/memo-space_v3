@@ -14,8 +14,8 @@
             = f.file_field :image, class: 'hidden'
       .new_message__input__tag
         %p.new_message__input__tag__title
-          タグ
+          tag
         .new_message__input__tag__element
           = f.collection_check_boxes :tag_ids, @user_tags, :id, :name do |b|
             = b.label(class:"new_message__input__tag__element__label") { b.check_box + " " + b.text }
-    = f.submit '登録', class: 'new_message__submit_btn'
+    = f.submit 'Register', class: 'new_message__submit_btn'

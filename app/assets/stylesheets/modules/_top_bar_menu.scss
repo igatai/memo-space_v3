@@ -1,5 +1,5 @@
 #global-navi {
-  padding-top: 30px;
+  padding-top: 25px;
   width: 100%;
 }
 #wrapper ul{
@@ -13,10 +13,10 @@
 }
 
 &__menu {
-
   ul {
     display: flex;
     li {
+      // height: $top_height;
       a {
         text-decoration: none;
         display: flex;
@@ -28,9 +28,6 @@
         padding-left: 3px;
         font-size: 17px;
       }
-      #icon {
-        color: white;
-      }
       a.menu__new_file {
         padding-left: 20px;
         .menu__new_file__icon {
@@ -39,15 +36,14 @@
             font-size: 15px;
             position: absolute;
             left: -13px;
-            bottom: 3px;
+            bottom: 10px;
           }
           i#new_file.far.fa-file-alt {
-            font-size: 28px;
+            font-size: 17px;
           }
         }
         .menu__new_file__guide {
-          margin-left: 4px;
-          line-height: 30px;
+
         }
       }
     
@@ -58,11 +54,11 @@
           p#new_tag.fas.fa-plus-circle {
             font-size: 15px;
             position: absolute;
-            left: -10px;
-            bottom: 3px;
+            left: -13px;
+            bottom: 10px;
           }
           i#new_tag.fas.fa-tags {
-            font-size: 28px;
+            font-size: 17px;
           }
         }
         .menu__new_tag__guide {
@@ -77,31 +73,46 @@
             font-size: 15px;
             position: absolute;
             left: -13px;
-            bottom: 3px;
+            bottom: 10px;
           }
           i#new_folder.far.fa-folder {
-            font-size: 28px;
+            font-size: 17px;
           }
         }
         .menu__new_folder__guide {
 
         }
       }
+      .menu__tag_search {
+        display: none;
+      }
+
+      a.menu__edit_tag_list {
+        padding-left: 10px;
+        .menu__edit_tag_list__icon {
+          i.fas.fa-edit {
+            font-size: 17px;
+          }
+        }
+        .menu__edit_tag_list__guide{
+        }
+      }
       a.menu__logout {
-        padding-left: 20px;
+        padding-left: 10px;
         .menu__logout__icon {
           i.fas.fa-.fa-sign-out-alt {
-            font-size: 28px;
+            font-size: 19px;
           }
         }
         .menu__logout__guide {
+
         }
       }
     }
   }
 }
 
-/*スマホ画面で例１のハンバーガーメニューの形にする*/
+/*スマホ画面でハンバーガーメニューの形にする*/
 @media (max-width: 1150px) {
 
   #wrapper nav {
@@ -117,66 +128,155 @@
     padding-top: $top_height;
   }
   #wrapper nav ul li {
-    display:block;
-    padding: 10px 20px;
+    width: 100%;
+    line-height: 40px;
+    display: flex;
+  }
+
+  #wrapper label {
+    line-height: 20px;
   }
 
   #wrapper nav ul li a {
+    width: 100%;
     text-decoration: none;
     color: #ddd;
+    padding-left: 30px;
   }
 
   ul {
     li {
+      width: 100%;
+      height: 100%;
       a.menu__new_file {
+
         .menu__new_file__icon {
           p#new_file.fas.fa-plus-circle {
+            padding-left: 5px;
             font-size: 13px;
           }
           i#new_file.far.fa-file-alt {
-            font-size: 20px;
+            font-size: 15px;
           }
         }
         .menu__new_file__guide {
-          font-size: 20px;
+          font-size: 17px;
         }
       }
       a.menu__new_tag {
         .menu__new_tag__icon {
           p#new_tag.fas.fa-plus-circle {
+            padding-left: 5px;
             font-size: 13px;
           }
           i#new_tag.fas.fa-tags {
-            font-size: 20px;
+            font-size: 15px;
           }
         }
         .menu__new_tag__guide {
-          font-size: 20px;
+          font-size: 17px;
         }
       }
       a.menu__new_folder {
         .menu__new_folder__icon {
           p#new_folder.fas.fa-plus-circle {
+            padding-left: 5px;
             font-size: 13px;
           }
           i#new_folder.far.fa-folder {
-            font-size: 20px;
+            font-size: 15px;
           }
         }
         .menu__new_folder__guide {
-          font-size: 20px;
+          font-size: 17px;
+        }
+      }
+
+      .menu__tag_search {
+        display: inline-block;
+        width: 100%;
+        &__title {
+          display: flex;
+          padding-left: 10px;
+          .fas.fa-search {
+            font-size: 17px;
+            margin: auto 0;
+          }
+          &__guide {
+            font-size: 17px;
+            padding-left: 3px;
+          }
+        }
+        &__ul {
+          padding-left: 13px;
+          &__search-form {
+            &__folder {
+              font-size: 17px;
+              color: white;
+              text-align: left;
+              &__list {
+                width: 100%;
+                height: 25px;
+                border-radius: 5px;
+                text-align: center;
+                color: white;
+                display: flex;
+                &__checkbox {
+                  margin: auto 0;
+                }
+                &__icon {
+                  padding-left: 5px;
+                  text-decoration: none;
+                  font-size: 13px;
+                  margin: auto 0;
+                }
+                &__name {
+                  font-size: 13px;
+                }
+              }
+            }
+            &__submit {
+              width: 75%;
+              height: 20px;
+              line-height: 20px;
+              color: white;
+              background-color:rgba(0,0,0,0);
+              margin: 0 2px;
+              // padding: 2px 0 2px 0;
+              font-size: 13px;
+              border: 1px solid;
+              border-color: white;
+              text-align: center;
+            }
+          }
+        }
+        a.menu__edit_tag_list {
+          i.fas.fa-edit {
+            font-size: 17px;
+          }
+          .menu__edit_tag_list__guide{
+          }
         }
       }
       a.menu__logout {
         .menu__logout__icon {
           i.fas.fa-.fa-sign-out-alt {
-            font-size: 20px;
+            font-size: 17px;
           }
         }
         .menu__logout__guide {
-          font-size: 20px;
+          font-size: 17px;
         }
       }
+    }
+    li :hover {
+      background-color: darkblue;
+    }
+    ul#tag_search {
+      display: none;
+    }
+    ul#tag_search.is-active {
+      display: block;
     }
   }
 

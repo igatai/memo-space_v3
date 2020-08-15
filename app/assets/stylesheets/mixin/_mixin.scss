@@ -1,4 +1,73 @@
-@mixin list {
+$breakpoints: (
+  'sm': 'screen and (min-width: 300px)',
+  // 'md': 'screen and (min-width: 768px)',
+  // 'lg': 'screen and (min-width: 1000px)',
+  'xl': 'screen and (min-width: 1150px)',
+) !default;
+
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+@mixin mq($breakpoint: xl) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// For mq(sm)
+@mixin list-sm {
+  border-radius: 10px 10px 10px 10px;
+  height: 110px;
+  width: 110px;
+  background: -webkit-linear-gradient(left,#6699FF 1%,#66CCFF 2%,#A7F1FF 3%,#FFFFFF 5%);
+  padding: 8px;
+  float: left;
+  margin: 10px 10px 40px 60px;
+  position: relative;
+  box-shadow: -60px 20px 8px 2px rgba(20,64,120,0.7);
+  overflow: hidden;
+}
+
+@mixin list_title-sm {
+  font-size: 10px;
+  color: darkblue;
+}
+
+@mixin list_content-sm {
+  margin-top: 8px;
+  display: flex;
+}
+
+@mixin list_content_text-sm {
+  // margin-right: 20px;
+  font-size: 8px;
+  color: silver;
+  word-break: break-all;
+}
+
+@mixin list_data-sm {
+  width: 100%;
+  font-size: 8px;
+  display: inline-block;
+  // vertical-align: text-bottom;
+  text-align: right;
+  position: relative;
+  bottom: 0;
+  // right: 0;
+
+  // align-items: flex-end;
+  // margin: 0 auto auto 0;
+  color: silver;
+  // position: absolute;
+  // bottom: 0;
+  // padding: 5px 0 5px 50px;
+}
+
+
+// For mq(xl)
+@mixin list-xl {
   border-radius: 10px 10px 10px 10px;
   height: 170px;
   width: 170px;
@@ -11,24 +80,24 @@
   overflow: hidden;
 }
 
-@mixin list_title {
+@mixin list_title-xl {
   font-size: 15px;
   color: darkblue;
 }
 
-@mixin list_content {
+@mixin list_content-xl {
   margin-top: 10px;
   display: flex;
 }
 
-@mixin list_content_text {
+@mixin list_content_text-xl {
   margin-right: 20px;
   font-size: 8px;
   color: silver;
   word-break: break-all;
 }
 
-@mixin list_data {
+@mixin list_data-xl {
   width: 100%;
   font-size: 10px;
   color: silver;

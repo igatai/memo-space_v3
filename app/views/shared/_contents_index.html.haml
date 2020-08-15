@@ -1,6 +1,6 @@
 .wrapper__contents__index__head
   .wrapper__contents__index__head__sub_title
-    = "#{@user.name}さんのメモリスト"
+    = "Memo list"
 %ul.wrapper__contents__index__ul
   - @memos.each do |memo|
     = link_to memo_path(memo) do
@@ -12,6 +12,6 @@
             = memo.text
           = image_tag memo.image.url, class: 'image', size: '60x60' if memo.image.present?
         .wrapper__contents__index__ul__list__date
-          = memo.updated_at.strftime("%Y年%m月%d日")
+          = memo.updated_at.strftime("%Y/%m/%d")
 .wrapper__contents__index__pagination
   = paginate @memos

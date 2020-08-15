@@ -1,26 +1,26 @@
 &__title {
-  width: 400px;
+  width: 20%;
   height: $top_height;
-  font-size: 50px;
+  font-size: 30px;
   line-height: $top_height;
   padding-top: 10px;
 
   i.fas.fa-republican {
-    font-size: 42px;
+    font-size: 30px;
     text-decoration: none;
     color: white;
   }
 }
 
-/*スマホ画面で例１のハンバーガーメニューの形にする*/
+/*スマホ画面でハンバーガーメニューの形にする*/
 @media (max-width: 1150px) {
   &__title {
-    width: 300px;
-    font-size: 30px;
+    width: 50%;
+    font-size: 18px;
     line-height: $top_height;
   
     i.fas.fa-republican {
-      font-size: 30px;
+      font-size: 20px;
       line-height: $top_height;
       text-decoration: none;
       color: white;

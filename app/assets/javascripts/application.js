@@ -56,3 +56,29 @@ $(function(){
     }, 200);
   });
 });
+
+$(function () {
+    // サイドサブメニューアコーディオン
+    $('#tag_search_title').on('click', function(){
+        // var $subNav = $(this).next('.menu__tag_search__ul');
+        var $subNav = $("#tag_search");
+        console.log($subNav);
+        console.log($subNav.is(':visible'));
+        if ($subNav.is(':visible')) {
+          $subNav.velocity('slideUp', {duration: 200});
+          $(this).children('ul').removeClass('is-active');
+        }
+        else {
+          // console.log("not visible");
+          $subNav.velocity('slideDown', {duration: 200});
+          $(this).children('ul').addClass('is-active');
+        }
+        return false;
+    });
+
+    $('#nav-toggle').on('click', function() {
+        $('body').toggleClass('close');
+    });
+
+    $('.scroll').perfectScrollbar();
+});

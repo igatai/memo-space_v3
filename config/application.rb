@@ -16,7 +16,8 @@ module MemoSpace
       g.javascripts false
       g.helper false
       g.test_framework false
-      config.i18n.default_locale = :ja
+      # config.i18n.default_locale = :ja
+      config.i18n.default_locale = :en
     end
   end
 end

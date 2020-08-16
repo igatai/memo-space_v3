@@ -62,7 +62,8 @@ $top_height: 50px;
   .wrapper__contents__index__pagination {
     position: fixed;
     bottom: 10px;
-    left: 40%;
+    width: 100%;
+    text-align: center;
     ul.pagination {
       li.page.active {
         a {
@@ -117,6 +118,7 @@ $top_height: 50px;
     height: calc(100vh - $top_height);
     box-sizing: border-box;
     margin: 0 auto;
+    padding: 30px 0 0 0;
     position: relative;
   
     &__head {

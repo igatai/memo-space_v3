@@ -4,7 +4,7 @@
 .wrapper__contents__center__memo__content
   .wrapper__contents__center__memo__content__text
     = simple_format(@memo.text) if @memo.text.present?
-  = image_tag @memo.image.url, class: 'image', size: '300x300' if @memo.image.present?
+  = image_tag @memo.image.url, class: 'image', size: '240x240' if @memo.image.present?
 .wrapper__contents__center__memo__bottom
   .wrapper__contents__center__memo__bottom__date
     = simple_format(@memo.updated_at.strftime("%Y/%m/%d/ %H:%M"))

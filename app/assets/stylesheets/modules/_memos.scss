@@ -4,6 +4,7 @@
 
 .wrapper {
   $top_height: 50px;
+  @import "mixin/mixin";
   @import "top_bar";
   @import "contents";
 }

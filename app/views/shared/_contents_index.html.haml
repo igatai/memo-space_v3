@@ -10,7 +10,7 @@
         .wrapper__contents__index__ul__list__content
           .wrapper__contents__index__ul__list__content__text
             = memo.text
-          = image_tag memo.image.url, class: 'image', size: '60x60' if memo.image.present?
+          = image_tag memo.image.url, class: '.wrapper__contents__index__ul__list__content__image', size: '30x30' if memo.image.present?
         .wrapper__contents__index__ul__list__date
           = memo.updated_at.strftime("%Y/%m/%d")
 .wrapper__contents__index__pagination

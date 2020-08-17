@@ -1,82 +1,166 @@
-&__memo{
-  min-height: 700px;
-  width: 80%;
-  padding: 30px 30px 30px 30px;
-  margin: 50px auto;
-  background-color: rgba(64,64,64,0.7);
-  border-radius: 3px;
-  &__info{
-    height: 50px;
-    padding-left: 30px;
-    padding-right: 30px;
+@include mq(sm) {
+  &__memo{
+    min-height: 80%;
+    width: 90%;
+    padding: 5% 5%;
+    margin: 10% auto;
+    background-color: rgba(64,64,64,0.7);
+    border-radius: 3px;
+    &__info{
+      height: 30px;
 
-    &__title{
-      font-size: 40px;
-      color: white;
-      font-weight: bold;
+      &__title{
+        font-size: 20px;
+        color: white;
+        font-weight: bold;
+      }
+    }
+    &__content{
+      margin: 5% 5%;
+      min-height: 500px;
+      &__text{
+        color: white;  
+        font-size: 20px;
+        word-break: break-all;
+        width: 100%;
+      }
+      &__image{
+        height: 100px;
+        width: 100px;
+        border-radius: 10px;
+      }
+    }
+    &__bottom {
+      &__date{
+        font-size: 15px;
+        color: white;
+        padding-top: 5px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      &__tags {
+        height: 25px;
+        font-size: 13px;
+        display: flex;
+        border-radius: 5px;
+        color: darkblue;
+    
+        .fas.fa-tags {
+          background-color: white;
+          margin-left: 15px;
+          line-height: 22px;
+          border-radius: 5px 0 0 5px;
+          padding: 3px 3px 3px 3px;
+        }
+        &__name {
+          background-color: white;
+          border-radius: 0 5px 5px 0;
+          padding: 5px 5px 5px 0;
+        }
+      }
+      &__icon {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .fas.fa-.fa-edit {
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+          margin: 0 20px 0 0;
+        }
+        .fas.fa-.fa-trash-alt {
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+          right: 400px;
+        }
+      }
     }
   }
-  &__content{
-    margin: 30px 30px 10px 30px;
-    min-height: 500px;
-    display: flex;
-    justify-content: space-between;
-    &__text{
-      color: white;  
-      font-size: 20px;
-      word-break: break-all;
-      padding-right: 20px;
-    }
-    &__image{
-      height: 300px;
-      width: 300px;
-      border-radius: 10px;
-    }
-  }
-  &__bottom {
-    &__date{
-      font-size: 15px;
-      color: white;
-      padding-top: 5px;
-      display: flex;
-      justify-content: flex-end;
-    }
-    &__tags {
-      height: 25px;
-      font-size: 13px;
-      display: flex;
-      border-radius: 5px;
-      color: darkblue;
-  
-      .fas.fa-tags {
-        background-color: white;
-        margin-left: 15px;
-        line-height: 22px;
-        border-radius: 5px 0 0 5px;
-        padding: 3px 3px 3px 3px;
-      }
-      &__name {
-        background-color: white;
-        border-radius: 0 5px 5px 0;
-        padding: 5px 5px 5px 0;
-      }
-    }
-    &__icon {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: flex-end;
-      .fas.fa-.fa-edit {
-        text-decoration: none;
+}
+
+@include mq(xl) {
+  &__memo{
+    min-height: 700px;
+    width: 80%;
+    padding: 30px 30px 30px 30px;
+    margin: 50px auto;
+    background-color: rgba(64,64,64,0.7);
+    border-radius: 3px;
+    &__info{
+      height: 50px;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      &__title{
+        font-size: 40px;
         color: white;
-        font-size: 20px;
-        margin: 0 20px 0 0;
+        font-weight: bold;
       }
-      .fas.fa-.fa-trash-alt {
-        text-decoration: none;
-        color: white;
+    }
+    &__content{
+      margin: 30px 30px 10px 30px;
+      min-height: 500px;
+      display: flex;
+      justify-content: space-between;
+      &__text{
+        color: white;  
         font-size: 20px;
-        right: 400px;
+        word-break: break-all;
+        padding-right: 20px;
+      }
+      &__image{
+        height: 300px;
+        width: 300px;
+        border-radius: 10px;
+      }
+    }
+    &__bottom {
+      &__date{
+        font-size: 15px;
+        color: white;
+        padding-top: 5px;
+        display: flex;
+        justify-content: flex-end;
+      }
+      &__tags {
+        height: 25px;
+        font-size: 13px;
+        display: flex;
+        border-radius: 5px;
+        color: darkblue;
+    
+        .fas.fa-tags {
+          background-color: white;
+          margin-left: 15px;
+          line-height: 22px;
+          border-radius: 5px 0 0 5px;
+          padding: 3px 3px 3px 3px;
+        }
+        &__name {
+          background-color: white;
+          border-radius: 0 5px 5px 0;
+          padding: 5px 5px 5px 0;
+        }
+      }
+      &__icon {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        .fas.fa-.fa-edit {
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+          margin: 0 20px 0 0;
+        }
+        .fas.fa-.fa-trash-alt {
+          text-decoration: none;
+          color: white;
+          font-size: 20px;
+          right: 400px;
+        }
       }
     }
   }

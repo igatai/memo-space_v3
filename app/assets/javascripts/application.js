@@ -39,28 +39,31 @@ $(function () {
 });
 
 $(function(){
-  $(".btn-gnavi").on("click", function(){
-      // ハンバーガーメニューの位置を設定
-    var rightVal = 0;
-    if($(this).hasClass("open")) {
-      // 位置を移動させメニューを開いた状態にする
-      rightVal = -300;
-      // メニューを開いたら次回クリック時は閉じた状態になるよう設定
-      $(this).removeClass("open");
-    } else {
-      // メニューを開いたら次回クリック時は閉じた状態になるよう設定
-      $(this).addClass("open");
-    }
-    $("#global-navi").stop().animate({
-      right: rightVal
-    }, 200);
+  $(document).on('turbolinks:load', function () {
+    $(".btn-gnavi#wrapper").on("click", function(){
+        // ハンバーガーメニューの位置を設定
+      var rightVal = 0;
+      console.log(rightVal);
+      if($(this).hasClass("open")) {
+        // 位置を移動させメニューを開いた状態にする
+        rightVal = -300;
+        // メニューを開いたら次回クリック時は閉じた状態になるよう設定
+        $(this).removeClass("open");
+      } else {
+        // メニューを開いたら次回クリック時は閉じた状態になるよう設定
+        $(this).addClass("open");
+      }
+      $("#global-navi").stop().animate({
+        right: rightVal
+      }, 200);
+    });
   });
 });
 
 $(function () {
+  $(document).on('turbolinks:load', function () {
     // サイドサブメニューアコーディオン
     $('#tag_search_title').on('click', function(){
-        // var $subNav = $(this).next('.menu__tag_search__ul');
         var $subNav = $("#tag_search");
         console.log($subNav);
         console.log($subNav.is(':visible'));
@@ -81,4 +84,5 @@ $(function () {
     });
 
     $('.scroll').perfectScrollbar();
+  });
 });

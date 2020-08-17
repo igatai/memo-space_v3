@@ -45,7 +45,7 @@ class MemosController < ApplicationController
 
   def set_memo_list
     # binding.pry
-    @memos = Memo.includes(:user).where(user_id: current_user.id).order(updated_at: :desc).page(params[:page]).per(10) if current_user != nil
+    @memos = Memo.includes(:user).where(user_id: current_user.id).order(updated_at: :desc).page(params[:page]).per(8) if current_user != nil
   end
 
   def set_memo_content

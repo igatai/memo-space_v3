@@ -3,7 +3,6 @@ $top_height: 50px;
 @include mq(sm){
   &__index {
     width: calc(100vw - 2%);
-    height: calc(100vh - $top_height);
     box-sizing: border-box;
     margin: 0 auto;
     position: relative;
@@ -11,7 +10,8 @@ $top_height: 50px;
     &__head {
       color: white;
       height: 50px;
-      width: calc(100vw - 10%);
+      // width: calc(100vw - 10%);
+      width: 100%;
   
       &__sub_title {
         font-size: 20px;
@@ -31,8 +31,9 @@ $top_height: 50px;
   
     &__ul {
       width: 100%;
+      margin: 0 auto;
+      margin-bottom: 100px;
       display: inline-block;
-      height: 100%;
   
       &__list {
         @include list-sm;
@@ -61,7 +62,8 @@ $top_height: 50px;
   .wrapper__contents__index__pagination {
     position: fixed;
     bottom: 10px;
-    left: 40%;
+    width: 100%;
+    text-align: center;
     ul.pagination {
       li.page.active {
         a {
@@ -116,6 +118,7 @@ $top_height: 50px;
     height: calc(100vh - $top_height);
     box-sizing: border-box;
     margin: 0 auto;
+    padding: 30px 0 0 0;
     position: relative;
   
     &__head {

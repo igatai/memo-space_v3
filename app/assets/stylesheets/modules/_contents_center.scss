@@ -1,9 +1,9 @@
-@media (min-width: 1150px) {
-  $right_width: 330px;
+@media (max-width: 1150px) {
+  $right_width: 0;
   $top_height: 50px;
   &__center {
     height: calc(100vh - $top_height);
-    width: calc(100vw - $right_width);
+    width: 100vw;
     @import "contents_center_memo";
     @import "contents_center_form";
     @import "contents_center_form_tag";
@@ -11,12 +11,12 @@
   }
 }
 
-@media (max-width: 1150px) {
-  $right_width: 0;
+@media (min-width: 1150px) {
+  $right_width: 330px;
   $top_height: 50px;
   &__center {
+    width: 100%;
     height: calc(100vh - $top_height);
-    width: 100vw;
     @import "contents_center_memo";
     @import "contents_center_form";
     @import "contents_center_form_tag";

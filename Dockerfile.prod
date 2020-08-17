@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 ENV APP_HOME /myproject
 WORKDIR $APP_HOME
 COPY Gemfile Gemfile.lock $APP_HOME
-# RUN gem install bundler
 RUN bundle install
 COPY . .
+RUN rails assets:precompile
 CMD ["rails","s"]

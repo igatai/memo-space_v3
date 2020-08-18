@@ -214,8 +214,8 @@
               text-align: left;
               &__list {
                 height: 25px;
-                padding-left: 3px;
-                border-radius: 5px;
+                padding-left: 10px;
+                border-radius: 16px;
                 text-align: center;
                 color: white;
                 display: flex;
@@ -297,7 +297,7 @@
     box-sizing: border-box;
     cursor: pointer;
     -webkit-transition: all 400ms;
-    transition: all 400ms
+    transition: all 400ms;
   }
 
   #wrapper .btn-gnavi span {

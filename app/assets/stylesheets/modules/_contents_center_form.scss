@@ -63,35 +63,68 @@
               }
             }
           }
-          &__tag {
-            font-size: 18px;
+
+          &__attributes {
             width: 90%;
-            margin: 0 auto;
-            margin-bottom: 20px;
-            &__element {
-              width: 100%;
-              padding: 10px 20px 10px 20px;
+            margin: 0 auto 20px auto;
+            font-size: 18px;
+
+            &__title {
+
+            }
+
+            &__board {
+              padding: 5% 10% 5% 10%;
               margin: auto auto;
               background-color: rgba(64,64,64,0.7);
-              border-radius: 5px;
-              &__label {
-                font-size: 20px;
-                display: block;
-                line-height: 35px;
+              border-radius: 10px;
+              &__folder {
+                padding-top: 5px;
+                display: flex;
+                &__icon {
+                  
+                }
+                &__name {
+                  padding-left: 5px;
+                }
+                
+              }
+              &__tag {
+                padding-left: 2%;
+                min-width: 200px;
+                display: inline-block;
+                &__cbx {
+                  height: 25px;
+                  border-radius: 16px;
+                  margin-top: 5px;
+                  padding: 3px  10px 0 15px;
+                  background-color: white;
+                  text-align: center;
+                  display: flex;
+                  color:darkblue;
+                  font-weight: normal;
+                  font-size: 15px;
+                  input {
+                    padding-left: 10px;
+                    text-decoration: none;
+                  }
+                  i {
+                    padding: 0 2px 0 5px;
+                    margin: auto 0;
+                  }
+                }
               }
             }
           }
         }
         &__submit_btn {
-          width: 90%;
+          margin: 10px auto 20px auto;
+          width: 60%;
           height: 40px;
           border-radius: 5px;
-          font-size: 1.2em;
-          margin-top: 20px;
           font-size: 20px;
           line-height: 40px;
           text-align: center;
-          margin: 0 auto;
           display: block;
           color: black;
         }
@@ -110,6 +143,7 @@
       text-align: center;
       padding-top: 30px;
       padding-bottom: 10px;
+      width: 100%;
     }
   
     form {
@@ -118,11 +152,13 @@
           display: flex;
           justify-content: center;
           &__form {
+            width: 55%;
+            margin: 0 0 0 auto;
             p {
               font-size: 20px;
             }
             &__title {
-              width: 750px;
+              width: 90%;
               height: 50px;
               align-items: center;
               border-radius: 10px;
@@ -132,7 +168,7 @@
               color: black;
             }
             &__text {
-              width: 750px;
+              width: 90%;
               height: 400px;
               align-items: center;
               padding-right: 90px;
@@ -144,11 +180,10 @@
               color: black;
             }
             &__mask {
-              // position: relative;
               &__image {
                 position: relative;
                 bottom: 80px;
-                left: 700px;
+                left: 84%;
                 font-size: 4rem;
                 color: black;
                 #memo_image {
@@ -160,19 +195,55 @@
               }
             }
           }
-          &__tag {
-            padding-left: 10px;
+          &__attributes {
+            margin: 0 auto 0 0;
             font-size: 18px;
-            &__element {
-              width: 100%;
+
+            &__title {
+
+            }
+
+            &__board {
+              width: 95%;
               padding: 20px 20px 20px 20px;
               margin: auto auto;
               background-color: rgba(64,64,64,0.7);
               border-radius: 5px;
-              &__label {
-                font-size: 20px;
-                display: block;
-                line-height: 35px;
+
+              &__folder {
+                display: flex;
+                &__icon {
+                  
+                }
+                &__name {
+                  padding-left: 5px;
+                }
+                
+              }
+              &__tag {
+                &__cbx {
+                  padding-left: 10px;
+                  height: 5px;
+                  border-radius: 20px;
+                  margin: 5px 5px 5px 10px;
+                  padding: 5px  10px 0 10px;
+                  background-color: white;
+                  text-align: center;
+                  display: flex;
+                  color:darkblue;
+                  width: 100%;
+                  font-weight: normal;
+                  input {
+                    padding-left: 5px;
+                    text-decoration: none;
+                    font-size: 15px;
+                  }
+                  i {
+                    font-size: 15px;
+                    padding: 0 2px 0 5px;
+                    margin: auto 0;
+                  }
+                }
               }
             }
           }

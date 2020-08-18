@@ -12,10 +12,17 @@
           =f.label :image, class: 'new_message__input__form__mask__image' do
             = icon('fas', 'image', class: 'icon')
             = f.file_field :image, class: 'hidden'
-      .new_message__input__tag
-        %p.new_message__input__tag__title
+      .new_message__input__attributes
+        %p.new_message__input__attributes__title
           tag
-        .new_message__input__tag__element
-          = f.collection_check_boxes :tag_ids, @user_tags, :id, :name do |b|
-            = b.label(class:"new_message__input__tag__element__label") { b.check_box + " " + b.text }
+        .new_message__input__attributes__board
+          - @user_folders.each do |user_folder|
+            .new_message__input__attributes__board__folder
+              .new_message__input__attributes__board__folder__icon
+                = icon('fas',' fa-folder')
+              .new_message__input__attributes__board__folder__name
+                = user_folder.name
+            .new_message__input__attributes__board__tag
+              = f.collection_check_boxes :tag_ids, user_folder.tags, :id, :name do |b|
+                = b.label(class:"new_message__input__attributes__board__tag__cbx") { b.check_box + " " + icon('fas',' fa-tags') + " "  + b.text }
     = f.submit 'Register', class: 'new_message__submit_btn'

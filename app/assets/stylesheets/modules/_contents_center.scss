@@ -2,7 +2,6 @@
   $right_width: 0;
   $top_height: 50px;
   &__center {
-    height: calc(100vh - $top_height);
     width: 100vw;
     @import "contents_center_memo";
     @import "contents_center_form";

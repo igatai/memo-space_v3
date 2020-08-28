@@ -1,33 +1,38 @@
 version: '3'
 
-volumes:
-  db-data:
-
 services:
-  web:
-    build: .
-    ports:
-      - '3000:3000'
-      # Setting for only Mysql environment on host 
-      # - '3306:3306'
+  app:
+    build:
+      context: .
+    env_file:
+      - ./environments/db.env
+    command: bundle exec puma -C config/puma.rb
     volumes:
-      - '.:/myproject'
-    environment:
-      - 'POSTGRES_USER=postgres'
-      - 'POSTGRES_PASSWORD=postgres'
-    tty: true
-    stdin_open: true
+      - .:/memo-space_v3
+      - public-data:/memo-space_v3/public
+      - tmp-data:/memo-space_v3/tmp
+      - log-data:/memo-space_v3/log
     depends_on:
       - db
-    links:
-      - db
   db:
-    image: postgres
-    # ホストのボリュームにDBデータを保管
+    image: mysql:5.7
+    env_file:
+      - ./environments/db.env
     volumes:
-      - 'db-data:/var/lib/postgresql/data'
-    environment:
-      - 'POSTGRES_USER=postgres'
-      - 'POSTGRES_PASSWORD=postgres'
-      # テスト環境でTravisCIから実行する際認証を通すため
-      - 'POSTGRES_HOST_AUTH_METHOD=trust'
+      - db-data:/var/lib/mysql
+  web:
+    build:
+      context: containers/nginx
+    volumes:
+      - public-data:/memo-space_v3/public
+      - tmp-data:/memo-space_v3/tmp
+    ports:
+      - 80:80
+    depends_on:
+      - app
+
+volumes:
+  public-data:
+  tmp-data:
+  log-data:
+  db-data:

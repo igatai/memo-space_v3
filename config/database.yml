@@ -8,45 +8,34 @@
 #
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
-#
 
-
-##########################################
-#  Settings on Postgresql Environment
-##########################################
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  host: db
-  user: postgres
-  port: 5432
-  password: <%= ENV.fetch("POSTGRES_PASSWORD") %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 ##########################################
 #  Settings on MySQL Environment
 ##########################################
-# default: &default
-#   adapter: mysql2
-#   encoding: utf8
-#   pool: 5
-#   username: root
-#   password:
-#   socket: /tmp/mysql.sock
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch('MYSQL_USER') %>
+  password: <%= ENV.fetch('MYSQL_PASSWORD') %>
+  user_name: root
+  # password: <%= ENV.fetch('MYSQL_ROOT_PASSWORD') %>
+
+  socket: /tmp/mysql.sock
+  host: db
 
 development:
   <<: *default
-  database: memo-space_v2_development
+  database: memo-space_v3_development
 
-  ### Settings for host mysql database.
-  # host: docker.for.mac.localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: memo-space_v2_test
+  database: memo-space_v3_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -65,18 +54,5 @@ test:
 # You can use this database configuration with:
 #
 
-  production:
-    url: <%= ENV['DATABASE_URL'] %>
-#
-
-## Setings for heroku environment
-# production:
-#   <<: *default
-#   database: memo-space_v2_production
-#   adapter: postgresql
-#   # database: postgresql
-#   encording: unicorde
-#   pool: 5
-#   username: memo-space_v2
-#   url: <%= ENV['DATABASE_URL'] %>
-#   password: <%= ENV['MEMO-SPACE_DATABASE_PASSWORD'] %>
+  # production:
+  #   url: <%= ENV['DATABASE_URL'] %>

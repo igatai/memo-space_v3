@@ -1,24 +1,4 @@
-# For MySQL running on Docker Environment.
-
-FROM ruby:2.5.1
-RUN apt-get update
-RUN apt-get install -y build-essential \
-    nodejs
-    # mysql-client
-
-ENV APP_HOME /memo-space_v3
-RUN rm -rf /var/lib/apt/lists/*
-WORKDIR $APP_HOME
-ADD Gemfile $APP_HOME/Gemfile
-ADD Gemfile.lock $APP_HOME/Gemfile.lock
-RUN gem install bundler
-ADD . $APP_HOME
-# RUN rm $APP_HOME/Gemfile.lock
-RUN bundle install
-RUN mkdir -p tmp/sockets
-
-
-# For MySQL running on host Environment.
+## For MySQL running on host Environment.
 
 # FROM ruby:2.5.1
 # RUN apt-get update
@@ -34,7 +14,7 @@ RUN mkdir -p tmp/sockets
 # RUN bundle install
 
 
-# ## For Postgresql running on container environment
+## For Postgresql running on container environment
 
 # FROM ruby:2.5.3
 # RUN apt-get update && apt-get install -y \

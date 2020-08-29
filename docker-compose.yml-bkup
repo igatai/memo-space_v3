@@ -1,0 +1,33 @@
+# version: '3'
+
+# volumes:
+#   db-data:
+
+# services:
+#   web:
+#     build: .
+#     ports:
+#       - '3000:3000'
+#       # Setting for only Mysql environment on host 
+#       # - '3306:3306'
+#     volumes:
+#       - '.:/myproject'
+#     environment:
+#       - 'POSTGRES_USER=postgres'
+#       - 'POSTGRES_PASSWORD=postgres'
+#     tty: true
+#     stdin_open: true
+#     depends_on:
+#       - db
+#     links:
+#       - db
+#   db:
+#     image: postgres
+#     # ホストのボリュームにDBデータを保管
+#     volumes:
+#       - 'db-data:/var/lib/postgresql/data'
+#     environment:
+#       - 'POSTGRES_USER=postgres'
+#       - 'POSTGRES_PASSWORD=postgres'
+#       # テスト環境でTravisCIから実行する際認証を通すため
+#       - 'POSTGRES_HOST_AUTH_METHOD=trust'

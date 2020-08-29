@@ -1,0 +1,2 @@
+GRANT ALL PRIVILEGES ON *.* TO 'memo_space_user'@'%';
+FLUSH PRIVILEGES;
